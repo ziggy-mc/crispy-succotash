@@ -1,0 +1,14 @@
+[Bot Base] - [06-19-2026 09:39:23][[31merror[39m]: [31m[CommandLoader] Failed to load D:\bots\794228666518339604\commands\slash\public\supporter.js: Invalid or unexpected token Invalid or unexpected token[39m
+[Bot Base] - [06-19-2026 09:40:27][[31merror[39m]: [31m[CommandLoader] Failed to load D:\bots\794228666518339604\commands\slash\public\supporter.js: Cannot find module '../../models/Supporter'[39m
+[31mRequire stack:[39m
+[31m- D:\bots\794228666518339604\commands\slash\public\supporter.js[39m
+[31m- D:\bots\794228666518339604\handlers\commandHandler.js[39m
+[31m- D:\bots\794228666518339604\events\client\ready.js[39m
+[31m- D:\bots\794228666518339604\handlers\eventHandler.js[39m
+[31m- D:\bots\794228666518339604\index.js Cannot find module '../../models/Supporter'[39m
+[31mRequire stack:[39m
+[31m- D:\bots\794228666518339604\commands\slash\public\supporter.js[39m
+[31m- D:\bots\794228666518339604\handlers\commandHandler.js[39m
+[31m- D:\bots\794228666518339604\events\client\ready.js[39m
+[31m- D:\bots\794228666518339604\handlers\eventHandler.js[39m
+[31m- D:\bots\794228666518339604\index.js[39m

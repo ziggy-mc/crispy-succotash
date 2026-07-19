@@ -1,0 +1,119 @@
+[Bot Base] - [09-15-2025 20:06:28][[31merror[39m]: [31m[EventLoader] Error loading event files: Cannot find module '../Schemas/pingStats'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/events/guild/messageCreate.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/eventHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js Cannot find module '../Schemas/pingStats'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/events/guild/messageCreate.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/eventHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js[39m
+[Bot Base] - [09-15-2025 20:06:47][[31merror[39m]: [31m[EventLoader] Error loading event files: Cannot find module '../Schemas/pingStats'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/events/guild/messageCreate.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/eventHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js Cannot find module '../Schemas/pingStats'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/events/guild/messageCreate.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/eventHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js[39m
+[Bot Base] - [09-15-2025 20:06:54][[31merror[39m]: [31m[EventLoader] Error loading event files: Unexpected token 'catch' Unexpected token 'catch'[39m
+[Bot Base] - [09-15-2025 20:07:04][[31merror[39m]: [31m[EventLoader] Error loading event files: Cannot find module '../Schemas/pingStats'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/events/guild/messageCreate.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/eventHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js Cannot find module '../Schemas/pingStats'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/events/guild/messageCreate.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/eventHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js[39m
+[Bot Base] - [09-15-2025 20:07:10][[31merror[39m]: [31m[EventLoader] Error loading event files: Cannot find module '../Schemas/pingStats'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/events/guild/messageCreate.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/eventHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js Cannot find module '../Schemas/pingStats'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/events/guild/messageCreate.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/eventHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js[39m
+[Bot Base] - [09-15-2025 20:07:15][[31merror[39m]: [31m[EventLoader] Error loading event files: Unexpected token 'catch' Unexpected token 'catch'[39m
+[Bot Base] - [09-15-2025 20:07:23][[31merror[39m]: [31m[EventLoader] Error loading event files: Cannot find module '../Schemas/pingStats'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/events/guild/messageCreate.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/eventHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js Cannot find module '../Schemas/pingStats'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/events/guild/messageCreate.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/eventHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js[39m
+[Bot Base] - [09-15-2025 20:07:48][[31merror[39m]: [31m[EventLoader] Error loading event files: Unexpected end of input Unexpected end of input[39m
+[Bot Base] - [09-15-2025 20:07:54][[31merror[39m]: [31m[EventLoader] Error loading event files: Unexpected end of input Unexpected end of input[39m
+[Bot Base] - [09-15-2025 20:08:03][[31merror[39m]: [31m[EventLoader] Error loading event files: Unexpected end of input Unexpected end of input[39m
+[Bot Base] - [09-15-2025 20:08:13][[31merror[39m]: [31m[EventLoader] Error loading event files: Cannot find module '../Schemas/pingStats'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/events/guild/messageCreate.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/eventHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js Cannot find module '../Schemas/pingStats'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/events/guild/messageCreate.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/eventHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js[39m
+[Bot Base] - [09-15-2025 20:08:33][[31merror[39m]: [31m[EventLoader] Error loading event files: Cannot find module '../../Schemas/pingStats'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/events/guild/messageCreate.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/eventHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js Cannot find module '../../Schemas/pingStats'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/events/guild/messageCreate.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/eventHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js[39m
+[Bot Base] - [09-15-2025 20:10:32][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/nping.js: Cannot find module '../../Schemas/pingStats'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/commands/slash/public/nping.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/commandHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/events/client/ready.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/eventHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js[39m
+[Bot Base] - [09-15-2025 20:10:32][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/ping-toggle.js: Cannot find module '../../Schemas/guildConfig'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/commands/slash/public/ping-toggle.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/commandHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/events/client/ready.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/eventHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js[39m
+[Bot Base] - [09-15-2025 20:10:57][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/nping.js: Cannot find module '../../Schemas.js/pingStats'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/commands/slash/public/nping.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/commandHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/events/client/ready.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/eventHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js[39m
+[Bot Base] - [09-15-2025 20:10:57][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/ping-toggle.js: Cannot find module '../../Schemas.js/guildConfig'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/commands/slash/public/ping-toggle.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/commandHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/events/client/ready.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/eventHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js[39m
+[Bot Base] - [09-15-2025 20:11:13][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/nping.js: Cannot find module '../../Schemas.js/pingStats'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/commands/slash/public/nping.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/commandHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/events/client/ready.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/eventHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js[39m
+[Bot Base] - [09-15-2025 20:11:13][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/ping-toggle.js: Cannot find module '../../Schemas.js/guildConfig'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/commands/slash/public/ping-toggle.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/commandHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/events/client/ready.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/eventHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js[39m
+[Bot Base] - [09-15-2025 20:12:22][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/nping.js: Unexpected token '{'[39m
+[Bot Base] - [09-15-2025 20:12:28][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/nping.js: Unexpected token '{'[39m
+[Bot Base] - [09-15-2025 20:12:39][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/nping.js: Unexpected token '{'[39m
+[Bot Base] - [09-15-2025 20:12:58][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/nping.js: Unexpected identifier 'enable'[39m
+[Bot Base] - [09-15-2025 20:13:05][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/nping.js: missing ) after argument list[39m
+[Bot Base] - [09-15-2025 20:13:14][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/nping.js: Unexpected template string[39m
+[Bot Base] - [09-15-2025 20:13:25][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/nping.js: Unexpected identifier 'enable'[39m
+[Bot Base] - [09-15-2025 20:13:31][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/nping.js: Unexpected identifier 'enable'[39m
+[Bot Base] - [09-15-2025 20:13:48][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/nping.js: Unexpected identifier 'enable'[39m

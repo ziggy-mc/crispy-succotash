@@ -1,0 +1,50 @@
+[Bot Base] - [05-08-2026 15:37:54][[31merror[39m]: [31m[EventLoader] Error loading event files: Cannot find module '@discordjs/voice'[39m
+[31mRequire stack:[39m
+[31m- D:\bots\794228666518339604\events\guild\voiceStateUpdate.js[39m
+[31m- D:\bots\794228666518339604\handlers\eventHandler.js[39m
+[31m- D:\bots\794228666518339604\index.js Cannot find module '@discordjs/voice'[39m
+[31mRequire stack:[39m
+[31m- D:\bots\794228666518339604\events\guild\voiceStateUpdate.js[39m
+[31m- D:\bots\794228666518339604\handlers\eventHandler.js[39m
+[31m- D:\bots\794228666518339604\index.js[39m
+[Bot Base] - [05-08-2026 15:46:22][[31merror[39m]: [31munhandledRejection: Service Unavailable[39m
+[31mHTTPError: Service Unavailable[39m
+[31m    at handleErrors (D:\bots\794228666518339604\node_modules\@discordjs\rest\dist\index.js:755:11)[39m
+[31m    at SequentialHandler.runRequest (D:\bots\794228666518339604\node_modules\@discordjs\rest\dist\index.js:1163:29)[39m
+[31m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+[31m    at async SequentialHandler.queueRequest (D:\bots\794228666518339604\node_modules\@discordjs\rest\dist\index.js:994:14)[39m
+[31m    at async _REST.request (D:\bots\794228666518339604\node_modules\@discordjs\rest\dist\index.js:1307:22)[39m
+[31m    at async WebSocketManager.fetchGatewayInformation (D:\bots\794228666518339604\node_modules\@discordjs\ws\dist\index.js:1404:18)[39m
+[31m    at async WebSocketManager.connect (D:\bots\794228666518339604\node_modules\discord.js\src\client\websocket\WebSocketManager.js:172:9)[39m
+[31m    at async Client.login (D:\bots\794228666518339604\node_modules\discord.js\src\client\Client.js:229:7)[39m
+[Bot Base] - [05-08-2026 15:48:27][[31merror[39m]: [31munhandledRejection: Service Unavailable[39m
+[31mHTTPError: Service Unavailable[39m
+[31m    at handleErrors (D:\bots\794228666518339604\node_modules\@discordjs\rest\dist\index.js:755:11)[39m
+[31m    at SequentialHandler.runRequest (D:\bots\794228666518339604\node_modules\@discordjs\rest\dist\index.js:1163:29)[39m
+[31m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+[31m    at async SequentialHandler.queueRequest (D:\bots\794228666518339604\node_modules\@discordjs\rest\dist\index.js:994:14)[39m
+[31m    at async _REST.request (D:\bots\794228666518339604\node_modules\@discordjs\rest\dist\index.js:1307:22)[39m
+[31m    at async WebSocketManager.fetchGatewayInformation (D:\bots\794228666518339604\node_modules\@discordjs\ws\dist\index.js:1404:18)[39m
+[31m    at async WebSocketManager.connect (D:\bots\794228666518339604\node_modules\discord.js\src\client\websocket\WebSocketManager.js:172:9)[39m
+[31m    at async Client.login (D:\bots\794228666518339604\node_modules\discord.js\src\client\Client.js:229:7)[39m
+[Bot Base] - [05-08-2026 15:57:01][[31merror[39m]: [31munhandledRejection: Service Unavailable[39m
+[31mHTTPError: Service Unavailable[39m
+[31m    at handleErrors (D:\bots\794228666518339604\node_modules\@discordjs\rest\dist\index.js:755:11)[39m
+[31m    at SequentialHandler.runRequest (D:\bots\794228666518339604\node_modules\@discordjs\rest\dist\index.js:1163:29)[39m
+[31m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+[31m    at async SequentialHandler.queueRequest (D:\bots\794228666518339604\node_modules\@discordjs\rest\dist\index.js:994:14)[39m
+[31m    at async _REST.request (D:\bots\794228666518339604\node_modules\@discordjs\rest\dist\index.js:1307:22)[39m
+[31m    at async WebSocketManager.fetchGatewayInformation (D:\bots\794228666518339604\node_modules\@discordjs\ws\dist\index.js:1404:18)[39m
+[31m    at async WebSocketManager.connect (D:\bots\794228666518339604\node_modules\discord.js\src\client\websocket\WebSocketManager.js:172:9)[39m
+[31m    at async Client.login (D:\bots\794228666518339604\node_modules\discord.js\src\client\Client.js:229:7)[39m
+[Bot Base] - [05-08-2026 16:31:50][[31merror[39m]: [31munhandledRejection: Gateway Timeout[39m
+[31mHTTPError: Gateway Timeout[39m
+[31m    at handleErrors (D:\bots\794228666518339604\node_modules\@discordjs\rest\dist\index.js:755:11)[39m
+[31m    at SequentialHandler.runRequest (D:\bots\794228666518339604\node_modules\@discordjs\rest\dist\index.js:1163:29)[39m
+[31m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+[31m    at async SequentialHandler.queueRequest (D:\bots\794228666518339604\node_modules\@discordjs\rest\dist\index.js:994:14)[39m
+[31m    at async _REST.request (D:\bots\794228666518339604\node_modules\@discordjs\rest\dist\index.js:1307:22)[39m
+[31m    at async WebSocketManager.fetchGatewayInformation (D:\bots\794228666518339604\node_modules\@discordjs\ws\dist\index.js:1404:18)[39m
+[31m    at async WebSocketManager.connect (D:\bots\794228666518339604\node_modules\discord.js\src\client\websocket\WebSocketManager.js:172:9)[39m
+[31m    at async Client.login (D:\bots\794228666518339604\node_modules\discord.js\src\client\Client.js:229:7)[39m
+[Bot Base] - [05-08-2026 18:29:49][[31merror[39m]: [31m[BugCleanup] RUNNING ON SHARD 0 ONLY[39m

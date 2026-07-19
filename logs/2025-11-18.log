@@ -1,0 +1,110 @@
+[Bot Base] - [11-17-2025 20:14:09][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/help/statuspagelink.js: Cannot find module '/home/ziggymc/Downloads/zigybot/commands/slash/public/utils/db.js' imported from /home/ziggymc/Downloads/zigybot/commands/slash/public/help/statuspagelink.js[39m
+[Bot Base] - [11-17-2025 20:14:34][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/help/statuspagelink.js: Cannot find module '/home/ziggymc/Downloads/zigybot/commands/utils/db.js' imported from /home/ziggymc/Downloads/zigybot/commands/slash/public/help/statuspagelink.js[39m
+[Bot Base] - [11-17-2025 20:15:09][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/help/statuspagelink.js: Cannot find package '/home/ziggymc/Downloads/zigybot/node_modules/index.js' imported from /home/ziggymc/Downloads/zigybot/commands/slash/public/help/statuspagelink.js[39m
+[Bot Base] - [11-17-2025 20:15:40][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/help/statuspagelink.js: Directory import '/home/ziggymc/Downloads/zigybot/' is not supported resolving ES modules imported from /home/ziggymc/Downloads/zigybot/commands/slash/public/help/statuspagelink.js[39m
+[Bot Base] - [11-17-2025 20:15:54][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/help/statuspagelink.js: Invalid or unexpected token[39m
+[Bot Base] - [11-17-2025 20:16:15][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/help/statuspagelink.js: Invalid or unexpected token[39m
+[Bot Base] - [11-17-2025 20:16:37][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/help/statuspagelink.js: Directory import '/home/ziggymc/Downloads/zigybot/' is not supported resolving ES modules imported from /home/ziggymc/Downloads/zigybot/commands/slash/public/help/statuspagelink.js[39m
+[Bot Base] - [11-17-2025 20:16:54][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/help/statuspagelink.js: Cannot read properties of undefined (reading 'name')[39m
+[Bot Base] - [11-17-2025 20:20:41][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/help/statuspagelink.js: Cannot find module '../../../Schemas.js/status.js'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/commands/slash/public/help/statuspagelink.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/commandHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/events/client/ready.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/eventHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js[39m
+[Bot Base] - [11-17-2025 20:21:45][[31merror[39m]: [31m[Interactions] Error executing slash command status: Interaction has already been acknowledged. Interaction has already been acknowledged.[39m
+[Bot Base] - [11-17-2025 20:21:45][[31merror[39m]: [31munhandledRejection: Interaction has already been acknowledged.[39m
+[31mDiscordAPIError[40060]: Interaction has already been acknowledged.[39m
+[31m    at handleErrors (/home/ziggymc/Downloads/zigybot/node_modules/@discordjs/rest/dist/index.js:762:13)[39m
+[31m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+[31m    at async BurstHandler.runRequest (/home/ziggymc/Downloads/zigybot/node_modules/@discordjs/rest/dist/index.js:866:23)[39m
+[31m    at async _REST.request (/home/ziggymc/Downloads/zigybot/node_modules/@discordjs/rest/dist/index.js:1307:22)[39m
+[31m    at async ChatInputCommandInteraction.reply (/home/ziggymc/Downloads/zigybot/node_modules/discord.js/src/structures/interfaces/InteractionResponses.js:193:22)[39m
+[Bot Base] - [11-17-2025 20:23:33][[31merror[39m]: [31m[Interactions] Error executing slash command status: Unknown interaction Unknown interaction[39m
+[Bot Base] - [11-17-2025 20:23:33][[31merror[39m]: [31munhandledRejection: Interaction has already been acknowledged.[39m
+[31mDiscordAPIError[40060]: Interaction has already been acknowledged.[39m
+[31m    at handleErrors (/home/ziggymc/Downloads/zigybot/node_modules/@discordjs/rest/dist/index.js:762:13)[39m
+[31m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+[31m    at async BurstHandler.runRequest (/home/ziggymc/Downloads/zigybot/node_modules/@discordjs/rest/dist/index.js:866:23)[39m
+[31m    at async _REST.request (/home/ziggymc/Downloads/zigybot/node_modules/@discordjs/rest/dist/index.js:1307:22)[39m
+[31m    at async ChatInputCommandInteraction.reply (/home/ziggymc/Downloads/zigybot/node_modules/discord.js/src/structures/interfaces/InteractionResponses.js:193:22)[39m
+[Bot Base] - [11-17-2025 20:24:42][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/help/statuspagelink.js: require is not defined in ES module scope, you can use import instead[39m
+[Bot Base] - [11-17-2025 20:25:05][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/help/statuspagelink.js: require is not defined in ES module scope, you can use import instead[39m
+[Bot Base] - [11-17-2025 20:25:22][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/help/status.js: require is not defined in ES module scope, you can use import instead[39m
+[Bot Base] - [11-17-2025 20:26:00][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/help/status.js: require is not defined in ES module scope, you can use import instead[39m
+[Bot Base] - [11-17-2025 20:26:00][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/help/statuspagelink.js: Unexpected token '}'[39m
+[Bot Base] - [11-17-2025 20:26:34][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/help/status.js: require is not defined in ES module scope, you can use import instead[39m
+[Bot Base] - [11-17-2025 20:26:34][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/help/statuspagelink.js: Unexpected token '}'[39m
+[Bot Base] - [11-17-2025 20:27:04][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/help/status.js: require is not defined in ES module scope, you can use import instead[39m
+[Bot Base] - [11-17-2025 20:27:04][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/help/statuspagelink.js: Unexpected token '}'[39m
+[Bot Base] - [11-17-2025 20:27:44][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/help/status.js: require is not defined in ES module scope, you can use import instead[39m
+[Bot Base] - [11-17-2025 20:28:54][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/help/status.js: require is not defined in ES module scope, you can use import instead[39m
+[Bot Base] - [11-17-2025 20:30:30][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/help/status.js: require is not defined in ES module scope, you can use import instead[39m
+[Bot Base] - [11-17-2025 20:31:51][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/help/status.js: require is not defined in ES module scope, you can use import instead[39m
+[Bot Base] - [11-17-2025 20:32:07][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/help/status.js: Cannot find module '../../../../utils/db.js'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/commands/slash/public/help/status.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/commandHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/events/client/ready.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/eventHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js[39m
+[Bot Base] - [11-17-2025 20:32:38][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/help/status.js: require() cannot be used on an ESM graph with top-level await. Use import() instead. To see where the top-level await comes from, use --experimental-print-required-tla.[39m
+[31m  From /home/ziggymc/Downloads/zigybot/handlers/commandHandler.js [39m
+[31m  Requiring /home/ziggymc/Downloads/zigybot/commands/slash/public/help/status.js [39m
+[Bot Base] - [11-17-2025 20:49:26][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/help/status.js: require is not defined in ES module scope, you can use import instead[39m
+[Bot Base] - [11-17-2025 20:49:54][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/help/status.js: Unexpected identifier 'mongoose'[39m
+[Bot Base] - [11-17-2025 20:50:11][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/help/status.js: StatusSchema is not defined[39m
+[Bot Base] - [11-17-2025 20:51:23][[31merror[39m]: [31m[Interactions] Error executing slash command status: Interaction has already been acknowledged. Interaction has already been acknowledged.[39m
+[Bot Base] - [11-17-2025 20:58:53][[31merror[39m]: [31m[Interactions] Error executing slash command status: Interaction has already been acknowledged. Interaction has already been acknowledged.[39m
+[Bot Base] - [11-17-2025 20:58:53][[31merror[39m]: [31munhandledRejection: Interaction has already been acknowledged.[39m
+[31mDiscordAPIError[40060]: Interaction has already been acknowledged.[39m
+[31m    at handleErrors (/home/ziggymc/Downloads/zigybot/node_modules/@discordjs/rest/dist/index.js:762:13)[39m
+[31m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+[31m    at async BurstHandler.runRequest (/home/ziggymc/Downloads/zigybot/node_modules/@discordjs/rest/dist/index.js:866:23)[39m
+[31m    at async _REST.request (/home/ziggymc/Downloads/zigybot/node_modules/@discordjs/rest/dist/index.js:1307:22)[39m
+[31m    at async ChatInputCommandInteraction.reply (/home/ziggymc/Downloads/zigybot/node_modules/discord.js/src/structures/interfaces/InteractionResponses.js:193:22)[39m
+[Bot Base] - [11-17-2025 21:00:02][[31merror[39m]: [31m[Interactions] Error executing slash command status: Interaction has already been acknowledged. Interaction has already been acknowledged.[39m
+[Bot Base] - [11-17-2025 21:00:02][[31merror[39m]: [31munhandledRejection: Interaction has already been acknowledged.[39m
+[31mDiscordAPIError[40060]: Interaction has already been acknowledged.[39m
+[31m    at handleErrors (/home/ziggymc/Downloads/zigybot/node_modules/@discordjs/rest/dist/index.js:762:13)[39m
+[31m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+[31m    at async BurstHandler.runRequest (/home/ziggymc/Downloads/zigybot/node_modules/@discordjs/rest/dist/index.js:866:23)[39m
+[31m    at async _REST.request (/home/ziggymc/Downloads/zigybot/node_modules/@discordjs/rest/dist/index.js:1307:22)[39m
+[31m    at async ChatInputCommandInteraction.reply (/home/ziggymc/Downloads/zigybot/node_modules/discord.js/src/structures/interfaces/InteractionResponses.js:193:22)[39m
+[Bot Base] - [11-17-2025 21:01:29][[31merror[39m]: [31m[Interactions] Error executing slash command status: Interaction has already been acknowledged. Interaction has already been acknowledged.[39m
+[Bot Base] - [11-17-2025 21:01:29][[31merror[39m]: [31munhandledRejection: Interaction has already been acknowledged.[39m
+[31mDiscordAPIError[40060]: Interaction has already been acknowledged.[39m
+[31m    at handleErrors (/home/ziggymc/Downloads/zigybot/node_modules/@discordjs/rest/dist/index.js:762:13)[39m
+[31m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+[31m    at async BurstHandler.runRequest (/home/ziggymc/Downloads/zigybot/node_modules/@discordjs/rest/dist/index.js:866:23)[39m
+[31m    at async _REST.request (/home/ziggymc/Downloads/zigybot/node_modules/@discordjs/rest/dist/index.js:1307:22)[39m
+[31m    at async ChatInputCommandInteraction.reply (/home/ziggymc/Downloads/zigybot/node_modules/discord.js/src/structures/interfaces/InteractionResponses.js:193:22)[39m
+[Bot Base] - [11-17-2025 21:02:34][[31merror[39m]: [31m[Interactions] Error executing slash command status: Interaction has already been acknowledged. Interaction has already been acknowledged.[39m
+[Bot Base] - [11-17-2025 21:02:34][[31merror[39m]: [31munhandledRejection: Interaction has already been acknowledged.[39m
+[31mDiscordAPIError[40060]: Interaction has already been acknowledged.[39m
+[31m    at handleErrors (/home/ziggymc/Downloads/zigybot/node_modules/@discordjs/rest/dist/index.js:762:13)[39m
+[31m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+[31m    at async BurstHandler.runRequest (/home/ziggymc/Downloads/zigybot/node_modules/@discordjs/rest/dist/index.js:866:23)[39m
+[31m    at async _REST.request (/home/ziggymc/Downloads/zigybot/node_modules/@discordjs/rest/dist/index.js:1307:22)[39m
+[31m    at async ChatInputCommandInteraction.reply (/home/ziggymc/Downloads/zigybot/node_modules/discord.js/src/structures/interfaces/InteractionResponses.js:193:22)[39m
+[Bot Base] - [11-17-2025 21:03:58][[31merror[39m]: [31m[Interactions] Error executing slash command pings: Unknown interaction Unknown interaction[39m
+[Bot Base] - [11-17-2025 21:03:58][[31merror[39m]: [31munhandledRejection: Interaction has already been acknowledged.[39m
+[31mDiscordAPIError[40060]: Interaction has already been acknowledged.[39m
+[31m    at handleErrors (/home/ziggymc/Downloads/zigybot/node_modules/@discordjs/rest/dist/index.js:762:13)[39m
+[31m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+[31m    at async BurstHandler.runRequest (/home/ziggymc/Downloads/zigybot/node_modules/@discordjs/rest/dist/index.js:866:23)[39m
+[31m    at async _REST.request (/home/ziggymc/Downloads/zigybot/node_modules/@discordjs/rest/dist/index.js:1307:22)[39m
+[31m    at async ChatInputCommandInteraction.reply (/home/ziggymc/Downloads/zigybot/node_modules/discord.js/src/structures/interfaces/InteractionResponses.js:193:22)[39m
+[Bot Base] - [11-17-2025 21:05:12][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/nping.js: Unexpected token ','[39m
+[Bot Base] - [11-17-2025 21:05:32][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/nping.js: Unexpected token ','[39m
+[Bot Base] - [11-17-2025 21:16:19][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/help/status.js: Unexpected token 'return'[39m
+[Bot Base] - [11-21-2025 18:05:29][[31merror[39m]: [31muncaughtException: Unexpected token 'D', "Deprecated"... is not valid JSON[39m
+[31mSyntaxError: Unexpected token 'D', "Deprecated"... is not valid JSON[39m
+[31m    at JSON.parse (<anonymous>)[39m
+[31m    at ChildProcess.<anonymous> (/home/ziggymc/Downloads/zigybot/node_modules/@distube/yt-dlp/dist/index.js:84:36)[39m
+[31m    at ChildProcess.emit (node:events:519:28)[39m
+[31m    at maybeClose (node:internal/child_process:1101:16)[39m
+[31m    at Socket.<anonymous> (node:internal/child_process:456:11)[39m
+[31m    at Socket.emit (node:events:519:28)[39m
+[31m    at Pipe.<anonymous> (node:net:346:12)[39m

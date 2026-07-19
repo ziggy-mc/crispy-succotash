@@ -1,0 +1,23 @@
+[Bot Base] - [11-14-2025 18:00:40][[31merror[39m]: [31muncaughtException: Unexpected token 'D', "Deprecated"... is not valid JSON[39m
+[31mSyntaxError: Unexpected token 'D', "Deprecated"... is not valid JSON[39m
+[31m    at JSON.parse (<anonymous>)[39m
+[31m    at ChildProcess.<anonymous> (/home/ziggymc/Downloads/zigybot/node_modules/@distube/yt-dlp/dist/index.js:84:36)[39m
+[31m    at ChildProcess.emit (node:events:519:28)[39m
+[31m    at maybeClose (node:internal/child_process:1101:16)[39m
+[31m    at ChildProcess._handle.onexit (node:internal/child_process:304:5)[39m
+[Bot Base] - [11-17-2025 20:34:04][[31merror[39m]: [31m[Client] an error occurred DiscordAPIError[10062]: Unknown interaction Unknown interaction[39m
+[Bot Base] - [11-17-2025 20:35:36][[31merror[39m]: [31m[Client] an error occurred DiscordAPIError[10062]: Unknown interaction Unknown interaction[39m
+[Bot Base] - [11-17-2025 20:42:38][[31merror[39m]: [31m[Client] an error occurred DiscordAPIError[40060]: Interaction has already been acknowledged. Interaction has already been acknowledged.[39m
+[Bot Base] - [11-17-2025 20:43:14][[31merror[39m]: [31m[Client] an error occurred DiscordAPIError[10062]: Unknown interaction Unknown interaction[39m
+[Bot Base] - [11-17-2025 20:44:57][[31merror[39m]: [31m[Client] an error occurred DiscordAPIError[10062]: Unknown interaction Unknown interaction[39m
+[Bot Base] - [11-17-2025 20:52:51][[31merror[39m]: [31m[Client] an error occurred DiscordAPIError[10062]: Unknown interaction Unknown interaction[39m
+[Bot Base] - [11-17-2025 20:55:28][[31merror[39m]: [31m[Client] an error occurred DiscordAPIError[10062]: Unknown interaction Unknown interaction[39m
+[Bot Base] - [11-17-2025 21:03:42][[31merror[39m]: [31m[Client] an error occurred DiscordAPIError[10062]: Unknown interaction Unknown interaction[39m
+[Bot Base] - [11-17-2025 21:06:24][[31merror[39m]: [31m[Interactions] Error executing slash command pings: Unknown interaction Unknown interaction[39m
+[Bot Base] - [11-17-2025 21:06:24][[31merror[39m]: [31munhandledRejection: Interaction has already been acknowledged.[39m
+[31mDiscordAPIError[40060]: Interaction has already been acknowledged.[39m
+[31m    at handleErrors (/home/ziggymc/Downloads/zigybot/node_modules/@discordjs/rest/dist/index.js:762:13)[39m
+[31m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+[31m    at async BurstHandler.runRequest (/home/ziggymc/Downloads/zigybot/node_modules/@discordjs/rest/dist/index.js:866:23)[39m
+[31m    at async _REST.request (/home/ziggymc/Downloads/zigybot/node_modules/@discordjs/rest/dist/index.js:1307:22)[39m
+[31m    at async ChatInputCommandInteraction.reply (/home/ziggymc/Downloads/zigybot/node_modules/discord.js/src/structures/interfaces/InteractionResponses.js:193:22)[39m

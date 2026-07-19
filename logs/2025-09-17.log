@@ -1,0 +1,14 @@
+[Bot Base] - [09-16-2025 22:36:56][[31merror[39m]: [31m[EventLoader] Error loading event files: Unexpected token 'try' Unexpected token 'try'[39m
+[Bot Base] - [09-16-2025 22:37:01][[31merror[39m]: [31m[EventLoader] Error loading event files: Unexpected token ';' Unexpected token ';'[39m
+[Bot Base] - [09-18-2025 19:44:35][[31merror[39m]: [31munhandledRejection: interaction is not defined[39m
+[31mReferenceError: interaction is not defined[39m
+[31m    at trackMessage (/home/ziggymc/Downloads/zigybot/utils/spamTracker.js:23:43)[39m
+[31m    at Client.<anonymous> (/home/ziggymc/Downloads/zigybot/index.js:43:5)[39m
+[31m    at Client.emit (node:events:531:35)[39m
+[31m    at MessageCreateAction.handle (/home/ziggymc/Downloads/zigybot/node_modules/discord.js/src/client/actions/MessageCreate.js:32:14)[39m
+[31m    at module.exports [as MESSAGE_CREATE] (/home/ziggymc/Downloads/zigybot/node_modules/discord.js/src/client/websocket/handlers/MESSAGE_CREATE.js:4:32)[39m
+[31m    at WebSocketManager.handlePacket (/home/ziggymc/Downloads/zigybot/node_modules/discord.js/src/client/websocket/WebSocketManager.js:352:31)[39m
+[31m    at WebSocketManager.<anonymous> (/home/ziggymc/Downloads/zigybot/node_modules/discord.js/src/client/websocket/WebSocketManager.js:236:12)[39m
+[31m    at WebSocketManager.emit (/home/ziggymc/Downloads/zigybot/node_modules/@vladfrangu/async_event_emitter/dist/index.cjs:287:31)[39m
+[31m    at WebSocketShard.<anonymous> (/home/ziggymc/Downloads/zigybot/node_modules/@discordjs/ws/dist/index.js:1190:51)[39m
+[31m    at WebSocketShard.emit (/home/ziggymc/Downloads/zigybot/node_modules/@vladfrangu/async_event_emitter/dist/index.cjs:287:31)[39m

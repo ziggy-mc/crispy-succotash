@@ -1,0 +1,7 @@
+[Bot Base] - [11-11-2025 19:08:14][[31merror[39m]: [31muncaughtException: Unexpected token 'D', "Deprecated"... is not valid JSON[39m
+[31mSyntaxError: Unexpected token 'D', "Deprecated"... is not valid JSON[39m
+[31m    at JSON.parse (<anonymous>)[39m
+[31m    at ChildProcess.<anonymous> (/home/ziggymc/Downloads/zigybot/node_modules/@distube/yt-dlp/dist/index.js:84:36)[39m
+[31m    at ChildProcess.emit (node:events:519:28)[39m
+[31m    at maybeClose (node:internal/child_process:1101:16)[39m
+[31m    at ChildProcess._handle.onexit (node:internal/child_process:304:5)[39m

@@ -1,0 +1,21 @@
+[Bot Base] - [08-30-2025 23:04:33][[31merror[39m]: [31munhandledRejection: interaction.deferReply is not a function[39m
+[31mTypeError: interaction.deferReply is not a function[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/commands/prefix/public/ping.js:15:23)[39m
+[31m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+[Bot Base] - [08-30-2025 23:05:24][[31merror[39m]: [31munhandledRejection: interaction.deferReply is not a function[39m
+[31mTypeError: interaction.deferReply is not a function[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/commands/prefix/public/ping.js:14:23)[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/events/guild/messageCreate.js:18:15)[39m
+[31m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+[Bot Base] - [08-30-2025 23:06:03][[31merror[39m]: [31munhandledRejection: interaction.fetchReply is not a function[39m
+[31mTypeError: interaction.fetchReply is not a function[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/commands/prefix/public/ping.js:14:44)[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/events/guild/messageCreate.js:18:15)[39m
+[31m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+[Bot Base] - [08-30-2025 23:09:00][[31merror[39m]: [31m[Interactions] Error executing slash command info: The reply to this interaction has already been sent or deferred. The reply to this interaction has already been sent or deferred.[39m
+[Bot Base] - [08-30-2025 23:10:37][[31merror[39m]: [31munhandledRejection: interaction.fetchReply is not a function[39m
+[31mTypeError: interaction.fetchReply is not a function[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/commands/prefix/public/ping.js:15:44)[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/events/guild/messageCreate.js:18:15)[39m
+[31m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+[Bot Base] - [08-30-2025 23:12:43][[31merror[39m]: [31m[Interactions] Error executing slash command info: The reply to this interaction has already been sent or deferred. The reply to this interaction has already been sent or deferred.[39m

@@ -1,0 +1,107 @@
+[Bot Base] - [01-07-2026 22:15:30][[31merror[39m]: [31m[ComponentLoader] Error loading buttons component at /home/ziggymc/Downloads/zigybot/components/buttons/ticketButton.js: Cannot find module '../../../Schemas/TicketPanel'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/components/buttons/ticketButton.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/componentHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js Cannot find module '../../../Schemas/TicketPanel'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/components/buttons/ticketButton.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/componentHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js[39m
+[Bot Base] - [01-07-2026 22:17:29][[31merror[39m]: [31m[ComponentLoader] Error loading buttons component at /home/ziggymc/Downloads/zigybot/components/buttons/ticketButton.js: Cannot find module '../../../Schemas/TicketPanel'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/components/buttons/ticketButton.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/componentHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js Cannot find module '../../../Schemas/TicketPanel'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/components/buttons/ticketButton.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/componentHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js[39m
+[Bot Base] - [01-07-2026 22:17:33][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/ticket.js: Cannot find module '../../../Schemas/TicketPanel'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/commands/slash/public/ticket.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/commandHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/events/client/ready.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/eventHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js[39m
+[Bot Base] - [01-07-2026 22:17:59][[31merror[39m]: [31m[ComponentLoader] Error loading buttons component at /home/ziggymc/Downloads/zigybot/components/buttons/ticketButton.js: Cannot find module '../Schemas/TicketPanel'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/components/buttons/ticketButton.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/componentHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js Cannot find module '../Schemas/TicketPanel'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/components/buttons/ticketButton.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/componentHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js[39m
+[Bot Base] - [01-07-2026 22:18:10][[31merror[39m]: [31m[ComponentLoader] Error loading buttons component at /home/ziggymc/Downloads/zigybot/components/buttons/ticketButton.js: Cannot find module '../../..//Schemas.js/TicketPanel'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/components/buttons/ticketButton.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/componentHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js Cannot find module '../../..//Schemas.js/TicketPanel'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/components/buttons/ticketButton.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/componentHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js[39m
+[Bot Base] - [01-07-2026 22:18:13][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/ticket.js: Cannot find module '../../../Schemas/TicketPanel'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/commands/slash/public/ticket.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/commandHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/events/client/ready.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/eventHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js[39m
+[Bot Base] - [01-07-2026 22:18:26][[31merror[39m]: [31m[ComponentLoader] Error loading buttons component at /home/ziggymc/Downloads/zigybot/components/buttons/ticketButton.js: Cannot find module '../../..//Schemas.js/TicketPanel'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/components/buttons/ticketButton.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/componentHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js Cannot find module '../../..//Schemas.js/TicketPanel'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/components/buttons/ticketButton.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/componentHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js[39m
+[Bot Base] - [01-07-2026 22:18:28][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/ticket.js: Cannot find module '../../../Schemas/TicketPanel'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/commands/slash/public/ticket.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/commandHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/events/client/ready.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/eventHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js[39m
+[Bot Base] - [01-07-2026 22:18:59][[31merror[39m]: [31m[ComponentLoader] Error loading buttons component at /home/ziggymc/Downloads/zigybot/components/buttons/ticketButton.js: Cannot find module '../../..//Schemas.js/TicketPanel'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/components/buttons/ticketButton.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/componentHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js Cannot find module '../../..//Schemas.js/TicketPanel'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/components/buttons/ticketButton.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/componentHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js[39m
+[Bot Base] - [01-07-2026 22:19:01][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/ticket.js: Cannot find module '../../../Schemas/TicketPanel'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/commands/slash/public/ticket.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/commandHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/events/client/ready.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/eventHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js[39m
+[Bot Base] - [01-07-2026 22:19:41][[31merror[39m]: [31m[ComponentLoader] Error loading buttons component at /home/ziggymc/Downloads/zigybot/components/buttons/ticketButton.js: Cannot find module '../../../Schemas.js/TicketPanel'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/components/buttons/ticketButton.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/componentHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js Cannot find module '../../../Schemas.js/TicketPanel'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/components/buttons/ticketButton.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/componentHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js[39m
+[Bot Base] - [01-07-2026 22:19:43][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/ticket.js: Cannot find module '../../../Schemas/TicketPanel'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/commands/slash/public/ticket.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/commandHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/events/client/ready.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/eventHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js[39m
+[Bot Base] - [01-07-2026 22:28:50][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/ticket.js: Cannot find module '../../../Schemas/TicketPanel'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/commands/slash/public/ticket.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/commandHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/events/client/ready.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/eventHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js[39m
+[Bot Base] - [01-07-2026 22:31:36][[31merror[39m]: [31m[Interactions] Error executing component create_ticket: Ticket validation failed: ticketNumber: Path `ticketNumber` is required. Ticket validation failed: ticketNumber: Path `ticketNumber` is required.[39m
+[Bot Base] - [01-07-2026 22:39:18][[31merror[39m]: [31m[Interactions] Error executing component create_ticket: Ticket validation failed: ticketNumber: Path `ticketNumber` is required. Ticket validation failed: ticketNumber: Path `ticketNumber` is required.[39m

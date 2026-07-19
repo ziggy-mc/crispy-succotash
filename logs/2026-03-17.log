@@ -1,0 +1,65 @@
+[Bot Base] - [03-16-2026 21:02:06][[31merror[39m]: [31muncaughtException: Cannot find module './models/GuildInfo'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js[39m
+[31mError: Cannot find module './models/GuildInfo'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js[39m
+[31m    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)[39m
+[31m    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)[39m
+[31m    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1192:37)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1463:12)[39m
+[31m    at require (node:internal/modules/helpers:147:16)[39m
+[31m    at Object.<anonymous> (/home/ziggymc/Downloads/zigybot/index.js:108:19)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1706:14)[39m
+[Bot Base] - [03-16-2026 21:02:52][[31merror[39m]: [31muncaughtException: Cannot find module './models/GuildInfo'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js[39m
+[31mError: Cannot find module './models/GuildInfo'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js[39m
+[31m    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)[39m
+[31m    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)[39m
+[31m    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1192:37)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1463:12)[39m
+[31m    at require (node:internal/modules/helpers:147:16)[39m
+[31m    at Object.<anonymous> (/home/ziggymc/Downloads/zigybot/index.js:108:19)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1706:14)[39m
+[Bot Base] - [03-16-2026 21:16:03][[31merror[39m]: [31muncaughtException: Cannot find module './models/GuildInfo'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js[39m
+[31mError: Cannot find module './models/GuildInfo'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js[39m
+[31m    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)[39m
+[31m    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)[39m
+[31m    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1192:37)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1463:12)[39m
+[31m    at require (node:internal/modules/helpers:147:16)[39m
+[31m    at Object.<anonymous> (/home/ziggymc/Downloads/zigybot/index.js:108:19)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1706:14)[39m
+[Bot Base] - [03-16-2026 21:16:13][[31merror[39m]: [31muncaughtException: Cannot find module './models/GuildInfo'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js[39m
+[31mError: Cannot find module './models/GuildInfo'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js[39m
+[31m    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)[39m
+[31m    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)[39m
+[31m    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1192:37)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1463:12)[39m
+[31m    at require (node:internal/modules/helpers:147:16)[39m
+[31m    at Object.<anonymous> (/home/ziggymc/Downloads/zigybot/index.js:108:19)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1706:14)[39m
+[Bot Base] - [03-16-2026 21:17:49][[31merror[39m]: [31m[EventLoader] Error loading event files: document is not defined document is not defined[39m

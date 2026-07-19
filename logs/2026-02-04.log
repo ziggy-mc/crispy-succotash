@@ -1,0 +1,17 @@
+[Bot Base] - [02-04-2026 18:06:09][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/bl.js: Cannot find module '../models/User'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/commands/slash/public/bl.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/commandHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/events/client/ready.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/eventHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js[39m
+[Bot Base] - [02-04-2026 18:06:34][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/bl.js: Cannot find module '../../../models/User'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/commands/slash/public/bl.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/commandHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/events/client/ready.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/eventHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js[39m
+[Bot Base] - [02-04-2026 18:14:13][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/bl.js: Cannot overwrite `User` model once compiled.[39m
+[Bot Base] - [02-04-2026 18:15:37][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/bl.js: Cannot overwrite `User` model once compiled.[39m
+[Bot Base] - [02-04-2026 18:24:01][[31merror[39m]: [31m[Interactions] Error executing slash command bl: interaction is not defined interaction is not defined[39m

@@ -1,0 +1,43 @@
+[Bot Base] - [04-21-2026 18:11:23][[31merror[39m]: [31munhandledRejection: bugCleanup is not defined[39m
+[31mReferenceError: bugCleanup is not defined[39m
+[31m    at Client.<anonymous> (D:\Z-Hosting\bots\794228666518339604\index.js:69:3)[39m
+[31m    at Object.onceWrapper (node:events:633:26)[39m
+[31m    at Client.emit (node:events:518:28)[39m
+[31m    at WebSocketManager.triggerClientReady (D:\Z-Hosting\bots\794228666518339604\node_modules\discord.js\src\client\websocket\WebSocketManager.js:386:21)[39m
+[31m    at WebSocketManager.checkShardsReady (D:\Z-Hosting\bots\794228666518339604\node_modules\discord.js\src\client\websocket\WebSocketManager.js:368:10)[39m
+[31m    at WebSocketShard.<anonymous> (D:\Z-Hosting\bots\794228666518339604\node_modules\discord.js\src\client\websocket\WebSocketManager.js:198:16)[39m
+[31m    at WebSocketShard.emit (node:events:518:28)[39m
+[31m    at WebSocketShard.checkReady (D:\Z-Hosting\bots\794228666518339604\node_modules\discord.js\src\client\websocket\WebSocketShard.js:184:12)[39m
+[31m    at WebSocketShard.gotGuild (D:\Z-Hosting\bots\794228666518339604\node_modules\discord.js\src\client\websocket\WebSocketShard.js:158:10)[39m
+[31m    at WebSocketManager.<anonymous> (D:\Z-Hosting\bots\794228666518339604\node_modules\discord.js\src\client\websocket\WebSocketManager.js:238:15)[39m
+[Bot Base] - [04-21-2026 18:12:53][[31merror[39m]: [31m[BugCleanup] RUNNING ON SHARD 0 ONLY[39m
+[Bot Base] - [04-21-2026 18:35:57][[31merror[39m]: [31m[BugCleanup] RUNNING ON SHARD 0 ONLY[39m
+[Bot Base] - [04-21-2026 19:15:28][[31merror[39m]: [31m[BugCleanup] RUNNING ON SHARD 0 ONLY[39m
+[Bot Base] - [04-21-2026 19:15:28][[31merror[39m]: [31m[CommandLoader] Failed to load D:\Z-Hosting\bots\794228666518339604\commands\slash\public\manage.js: missing ) after argument list missing ) after argument list[39m
+[Bot Base] - [04-21-2026 19:18:08][[31merror[39m]: [31m[BugCleanup] RUNNING ON SHARD 0 ONLY[39m
+[Bot Base] - [04-21-2026 19:18:08][[31merror[39m]: [31m[CommandLoader] Failed to load D:\Z-Hosting\bots\794228666518339604\commands\slash\public\manage.js: missing ) after argument list missing ) after argument list[39m
+[Bot Base] - [04-21-2026 19:19:42][[31merror[39m]: [31m[BugCleanup] RUNNING ON SHARD 0 ONLY[39m
+[Bot Base] - [04-21-2026 19:22:57][[31merror[39m]: [31m[BugCleanup] RUNNING ON SHARD 0 ONLY[39m
+[Bot Base] - [04-21-2026 19:22:57][[31merror[39m]: [31m[CommandLoader] Failed to load D:\Z-Hosting\bots\794228666518339604\commands\slash\public\manage.js: Unexpected token ')' Unexpected token ')'[39m
+[Bot Base] - [04-21-2026 19:23:22][[31merror[39m]: [31m[BugCleanup] RUNNING ON SHARD 0 ONLY[39m
+[Bot Base] - [04-21-2026 19:23:22][[31merror[39m]: [31m[CommandLoader] Failed to load D:\Z-Hosting\bots\794228666518339604\commands\slash\public\manage.js: Unexpected token ')' Unexpected token ')'[39m
+[Bot Base] - [04-21-2026 19:24:08][[31merror[39m]: [31m[BugCleanup] RUNNING ON SHARD 0 ONLY[39m
+[Bot Base] - [04-21-2026 19:30:53][[31merror[39m]: [31m[BugCleanup] RUNNING ON SHARD 0 ONLY[39m
+[Bot Base] - [04-21-2026 19:31:13][[31merror[39m]: [31munhandledRejection: isPremium is not defined[39m
+[31mReferenceError: isPremium is not defined[39m
+[31m    at InteractionCollector.<anonymous> (D:\Z-Hosting\bots\794228666518339604\commands\slash\public\manage.js:279:21)[39m
+[31m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+[Bot Base] - [04-21-2026 19:33:07][[31merror[39m]: [31m[BugCleanup] RUNNING ON SHARD 0 ONLY[39m
+[Bot Base] - [04-21-2026 19:36:53][[31merror[39m]: [31m[BugCleanup] RUNNING ON SHARD 0 ONLY[39m
+[Bot Base] - [04-21-2026 19:39:56][[31merror[39m]: [31m[BugCleanup] RUNNING ON SHARD 0 ONLY[39m
+[Bot Base] - [04-21-2026 19:40:36][[31merror[39m]: [31munhandledRejection: Unknown Message[39m
+[31mDiscordAPIError[10008]: Unknown Message[39m
+[31m    at handleErrors (D:\Z-Hosting\bots\794228666518339604\node_modules\@discordjs\rest\dist\index.js:762:13)[39m
+[31m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+[31m    at async SequentialHandler.runRequest (D:\Z-Hosting\bots\794228666518339604\node_modules\@discordjs\rest\dist\index.js:1163:23)[39m
+[31m    at async SequentialHandler.queueRequest (D:\Z-Hosting\bots\794228666518339604\node_modules\@discordjs\rest\dist\index.js:994:14)[39m
+[31m    at async _REST.request (D:\Z-Hosting\bots\794228666518339604\node_modules\@discordjs\rest\dist\index.js:1307:22)[39m
+[31m    at async InteractionWebhook.editMessage (D:\Z-Hosting\bots\794228666518339604\node_modules\discord.js\src\structures\Webhook.js:351:15)[39m
+[31m    at async ChatInputCommandInteraction.editReply (D:\Z-Hosting\bots\794228666518339604\node_modules\discord.js\src\structures\interfaces\InteractionResponses.js:247:17)[39m
+[31m    at async InteractionCollector.<anonymous> (D:\Z-Hosting\bots\794228666518339604\commands\slash\public\manage.js:317:5)[39m
+[Bot Base] - [04-21-2026 19:43:42][[31merror[39m]: [31m[BugCleanup] RUNNING ON SHARD 0 ONLY[39m

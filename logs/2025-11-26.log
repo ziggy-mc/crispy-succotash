@@ -1,0 +1,20 @@
+[Bot Base] - [11-25-2025 21:22:49][[31merror[39m]: [31muncaughtException: Unexpected token 'D', "Deprecated"... is not valid JSON[39m
+[31mSyntaxError: Unexpected token 'D', "Deprecated"... is not valid JSON[39m
+[31m    at JSON.parse (<anonymous>)[39m
+[31m    at ChildProcess.<anonymous> (/home/ziggymc/Downloads/zigybot/node_modules/@distube/yt-dlp/dist/index.js:84:36)[39m
+[31m    at ChildProcess.emit (node:events:519:28)[39m
+[31m    at maybeClose (node:internal/child_process:1101:16)[39m
+[31m    at Socket.<anonymous> (node:internal/child_process:456:11)[39m
+[31m    at Socket.emit (node:events:519:28)[39m
+[31m    at Pipe.<anonymous> (node:net:346:12)[39m
+[Bot Base] - [11-25-2025 21:28:54][[31merror[39m]: [31muncaughtException: Unexpected token 'D', "Deprecated"... is not valid JSON[39m
+[31mSyntaxError: Unexpected token 'D', "Deprecated"... is not valid JSON[39m
+[31m    at JSON.parse (<anonymous>)[39m
+[31m    at ChildProcess.<anonymous> (/home/ziggymc/Downloads/zigybot/node_modules/@distube/yt-dlp/dist/index.js:84:36)[39m
+[31m    at ChildProcess.emit (node:events:519:28)[39m
+[31m    at maybeClose (node:internal/child_process:1101:16)[39m
+[31m    at ChildProcess._handle.onexit (node:internal/child_process:304:5)[39m
+[Bot Base] - [11-25-2025 21:56:25][[31merror[39m]: [31m[Interactions] Error executing slash command music: registerDefaultExtractors is not a function registerDefaultExtractors is not a function[39m
+[Bot Base] - [11-25-2025 21:58:22][[31merror[39m]: [31m[Interactions] Error executing slash command music: useDefaultExtractor is not a function useDefaultExtractor is not a function[39m
+[Bot Base] - [11-25-2025 22:01:16][[31merror[39m]: [31m[Interactions] Error executing slash command music: useDefaultExtractor is not a function useDefaultExtractor is not a function[39m
+[Bot Base] - [11-25-2025 22:02:17][[31merror[39m]: [31m[Interactions] Error executing slash command music: player.extractors.load is not a function player.extractors.load is not a function[39m

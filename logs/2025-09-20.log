@@ -1,0 +1,4 @@
+[Bot Base] - [09-20-2025 10:51:46][[31merror[39m]: [31m[EventLoader] Error loading event files: Unexpected token '!' Unexpected token '!'[39m
+[Bot Base] - [09-20-2025 10:52:06][[31merror[39m]: [31m[EventLoader] Error loading event files: Unexpected token ';' Unexpected token ';'[39m
+[Bot Base] - [09-20-2025 10:58:40][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/prefix/public/help.js: missing ) after argument list[39m
+[Bot Base] - [09-20-2025 11:00:09][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/prefix/public/beta.js: Unexpected identifier 'Pong'[39m

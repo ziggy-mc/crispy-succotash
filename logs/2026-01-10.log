@@ -1,0 +1,55 @@
+[Bot Base] - [01-09-2026 20:50:18][[31merror[39m]: [31m[ComponentLoader] Error loading buttons component at /home/ziggymc/Downloads/zigybot/components/buttons/close_ticket.js: Cannot find module '../../Schemas/Ticket'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/components/buttons/close_ticket.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/componentHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js Cannot find module '../../Schemas/Ticket'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/components/buttons/close_ticket.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/componentHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js[39m
+[Bot Base] - [01-09-2026 20:54:53][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/ticket.js: Unexpected token 'catch'[39m
+[Bot Base] - [01-09-2026 20:55:45][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/ticket.js: Unexpected token 'catch'[39m
+[Bot Base] - [01-09-2026 20:56:00][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/ticket.js: Unexpected token 'catch'[39m
+[Bot Base] - [01-09-2026 20:56:20][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/ticket.js: Unexpected token 'catch'[39m
+[Bot Base] - [01-09-2026 20:56:47][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/ticket.js: Unexpected token '{'[39m
+[Bot Base] - [01-09-2026 20:57:07][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/ticket.js: Unexpected token 'catch'[39m
+[Bot Base] - [01-09-2026 20:57:33][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/ticket.js: Unexpected token '}'[39m
+[Bot Base] - [01-09-2026 20:57:49][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/ticket.js: Unexpected token 'catch'[39m
+[Bot Base] - [01-09-2026 20:58:07][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/ticket.js: Unexpected token 'catch'[39m
+[Bot Base] - [01-09-2026 20:58:21][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/ticket.js: Unexpected token 'catch'[39m
+[Bot Base] - [01-09-2026 21:00:24][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/ticket.js: Unexpected token 'catch'[39m
+[Bot Base] - [01-09-2026 21:02:44][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/ticket.js: Cannot find module '../../Schemas'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/commands/slash/public/ticket.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/commandHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/events/client/ready.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/eventHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js[39m
+[Bot Base] - [01-09-2026 21:02:56][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/ticket.js: Cannot find module '../../Schemas.js/ticket'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/commands/slash/public/ticket.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/commandHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/events/client/ready.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/eventHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js[39m
+[Bot Base] - [01-09-2026 21:03:27][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/ticket.js: Cannot find module '../../Schemas.js/tickets'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/commands/slash/public/ticket.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/commandHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/events/client/ready.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/eventHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js[39m
+[Bot Base] - [01-09-2026 21:03:58][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/ticket.js: Cannot find module '../../Schemas.js/tickets'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/commands/slash/public/ticket.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/commandHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/events/client/ready.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/eventHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js[39m
+[Bot Base] - [01-09-2026 21:05:10][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/ticket.js: Cannot find module '../../Schemas.js/Ticket'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/commands/slash/public/ticket.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/commandHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/events/client/ready.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/eventHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js[39m

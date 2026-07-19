@@ -1,0 +1,69 @@
+[Bot Base] - [09-03-2025 22:14:21][[31merror[39m]: [31m[Interactions] Error executing slash command reaction-roles: Cannot read properties of undefined (reading 'fetch') Cannot read properties of undefined (reading 'fetch')[39m
+[Bot Base] - [09-04-2025 18:26:32][[31merror[39m]: [31munhandledRejection: interaction is not defined[39m
+[31mReferenceError: interaction is not defined[39m
+[31m    at trackMessage (/home/ziggymc/Downloads/zigybot/utils/spamTracker.js:23:43)[39m
+[31m    at Client.<anonymous> (/home/ziggymc/Downloads/zigybot/index.js:42:5)[39m
+[31m    at Client.emit (node:events:531:35)[39m
+[31m    at MessageCreateAction.handle (/home/ziggymc/Downloads/zigybot/node_modules/discord.js/src/client/actions/MessageCreate.js:32:14)[39m
+[31m    at module.exports [as MESSAGE_CREATE] (/home/ziggymc/Downloads/zigybot/node_modules/discord.js/src/client/websocket/handlers/MESSAGE_CREATE.js:4:32)[39m
+[31m    at WebSocketManager.handlePacket (/home/ziggymc/Downloads/zigybot/node_modules/discord.js/src/client/websocket/WebSocketManager.js:352:31)[39m
+[31m    at WebSocketManager.<anonymous> (/home/ziggymc/Downloads/zigybot/node_modules/discord.js/src/client/websocket/WebSocketManager.js:236:12)[39m
+[31m    at WebSocketManager.emit (/home/ziggymc/Downloads/zigybot/node_modules/@vladfrangu/async_event_emitter/dist/index.cjs:287:31)[39m
+[31m    at WebSocketShard.<anonymous> (/home/ziggymc/Downloads/zigybot/node_modules/@discordjs/ws/dist/index.js:1190:51)[39m
+[31m    at WebSocketShard.emit (/home/ziggymc/Downloads/zigybot/node_modules/@vladfrangu/async_event_emitter/dist/index.cjs:287:31)[39m
+[Bot Base] - [09-04-2025 19:12:41][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/public/reactionroles.js: Unexpected token 'case'[39m
+[Bot Base] - [09-04-2025 19:13:44][[31merror[39m]: [31muncaughtException: Partials is not defined[39m
+[31mReferenceError: Partials is not defined[39m
+[31m    at Object.<anonymous> (/home/ziggymc/Downloads/zigybot/index.js:12:14)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1706:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1839:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1441:32)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1263:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)[39m
+[31m    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)[39m
+[31m    at node:internal/main/run_main_module:36:49[39m
+[Bot Base] - [09-04-2025 19:14:08][[31merror[39m]: [31muncaughtException: Partials is not defined[39m
+[31mReferenceError: Partials is not defined[39m
+[31m    at Object.<anonymous> (/home/ziggymc/Downloads/zigybot/index.js:12:14)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1706:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1839:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1441:32)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1263:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)[39m
+[31m    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)[39m
+[31m    at node:internal/main/run_main_module:36:49[39m
+[Bot Base] - [09-04-2025 19:14:47][[31merror[39m]: [31muncaughtException: Partials is not defined[39m
+[31mReferenceError: Partials is not defined[39m
+[31m    at Object.<anonymous> (/home/ziggymc/Downloads/zigybot/index.js:12:14)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1706:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1839:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1441:32)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1263:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)[39m
+[31m    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)[39m
+[31m    at node:internal/main/run_main_module:36:49[39m
+[Bot Base] - [09-04-2025 19:15:23][[31merror[39m]: [31muncaughtException: Partials is not defined[39m
+[31mReferenceError: Partials is not defined[39m
+[31m    at Object.<anonymous> (/home/ziggymc/Downloads/zigybot/index.js:12:14)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1706:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1839:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1441:32)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1263:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)[39m
+[31m    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)[39m
+[31m    at node:internal/main/run_main_module:36:49[39m
+[Bot Base] - [09-04-2025 19:16:25][[31merror[39m]: [31muncaughtException: Partials is not defined[39m
+[31mReferenceError: Partials is not defined[39m
+[31m    at Object.<anonymous> (/home/ziggymc/Downloads/zigybot/index.js:19:14)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1706:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1839:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1441:32)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1263:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)[39m
+[31m    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)[39m
+[31m    at node:internal/main/run_main_module:36:49[39m

@@ -1,0 +1,48 @@
+{
+    "sections": [
+        {
+            "name": "What's New",
+            "version": "1.2.6",
+            "published": "2026-06-08",
+            "embeds": [
+                {
+                    "category": "Limits",
+                    "title": "More Bugs Open",
+                    "description": "We have increased the limits for the amount of bugs able to be open. Free users have have `2 bugs` open at a time. Premium users can have `5 bugs` open at a time.",
+                    "footer": "Limit increase",
+                    "thumbnail": ""
+                },
+                {
+                    "category": "Bug Vars",
+                    "title": "End of bug title",
+                    "description": "We have increased the number of letters and numbers at the end of a bug. This allow more bogs to be open at a time. (Global)",
+                    "footer": ""
+                }
+            ]
+        },
+        {
+            "name": "Important",
+            "published": "2026-06-04",
+            "embeds": [
+                {
+                    "category": "Privacy Policy",
+                    "title": "Updated our Privacy Policy",
+                    "description": "We have updated section 2, and added a new section in our Privacy Policy. View it here: https://bugs.ziggymc.me/privacy",
+                    "footer": "This was updated in v1.2.5"
+                }
+            ]
+        },
+        {
+            "name": "Known Bugs",
+            "published": "2026-06-07",
+            "embeds": [
+                {
+                    "category": "Known Issue",
+                    "title": "Reopen Bug",
+                    "description": "When the automated system/staff member deletes a bug thread, it will still send the reopen button even if the thread is gone.",
+                    "footer": ""
+                }
+            ]
+        }
+    ]
+}

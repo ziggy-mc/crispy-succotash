@@ -1,0 +1,18 @@
+module.exports = {
+    adev: '<:ActiveDeveloper:1487280230740525096>',
+    bal: '<:Balance:1487280232430833745>',
+    brav: '<:Bravery:1487280232967966903>',
+    bril: '<:Brilliance:1487280234037248240>',
+    bug1: '<:BugHunter1:1487280235169841344>',
+    lamo: '<:CertifiedModerator:1487280236008702022>',
+    astaff: '<:DiscordStaff:1487280237157810278>',
+    coolio: '<:EarlySupporter:1487280238214909992>',
+    hypes: '<:Hypesquad:1487280239217217546>',
+    bug2: '<:BugHunter2:1487280240513388646>',
+    dah: '<:Knownas:1487280241570218075>',
+    nitro: '<:Nitro:1487280242795217092>',
+    partner: '<:Partner:1487280244351303711>',
+    cmd: '<:SlashCommands:1487280245823246408>',
+    vbot: '<:VerifiedBot:1487280247622860800>',
+    vbotdev: '<:VerifiedBotDeveloper:1487280248616783892>',
+}

@@ -1,0 +1,41 @@
+[Bot Base] - [04-12-2026 21:17:46][[31merror[39m]: [31m[EventLoader] Error loading event files: Cannot overwrite `Supporter` model once compiled. Cannot overwrite `Supporter` model once compiled.[39m
+[Bot Base] - [04-12-2026 21:49:49][[31merror[39m]: [31m[EventLoader] Error loading event files: Cannot overwrite `Supporter` model once compiled. Cannot overwrite `Supporter` model once compiled.[39m
+[Bot Base] - [04-12-2026 21:55:49][[31merror[39m]: [31m[ComponentLoader] Error loading buttons component at D:\Z-Hosting\bots\794228666518339604\components\buttons\deletedata.js: Cannot find module '../../Schemas.js/Supporter'[39m
+[31mRequire stack:[39m
+[31m- D:\Z-Hosting\bots\794228666518339604\components\buttons\deletedata.js[39m
+[31m- D:\Z-Hosting\bots\794228666518339604\handlers\componentHandler.js[39m
+[31m- D:\Z-Hosting\bots\794228666518339604\index.js Cannot find module '../../Schemas.js/Supporter'[39m
+[31mRequire stack:[39m
+[31m- D:\Z-Hosting\bots\794228666518339604\components\buttons\deletedata.js[39m
+[31m- D:\Z-Hosting\bots\794228666518339604\handlers\componentHandler.js[39m
+[31m- D:\Z-Hosting\bots\794228666518339604\index.js[39m
+[Bot Base] - [04-12-2026 21:57:49][[31merror[39m]: [31m[EventLoader] Error loading event files: Cannot overwrite `Supporter` model once compiled. Cannot overwrite `Supporter` model once compiled.[39m
+[Bot Base] - [04-12-2026 21:58:24][[31merror[39m]: [31m[EventLoader] Error loading event files: Cannot find module '../Schemas.js/supporters'[39m
+[31mRequire stack:[39m
+[31m- D:\Z-Hosting\bots\794228666518339604\events\threadCreate.js[39m
+[31m- D:\Z-Hosting\bots\794228666518339604\handlers\eventHandler.js[39m
+[31m- D:\Z-Hosting\bots\794228666518339604\index.js Cannot find module '../Schemas.js/supporters'[39m
+[31mRequire stack:[39m
+[31m- D:\Z-Hosting\bots\794228666518339604\events\threadCreate.js[39m
+[31m- D:\Z-Hosting\bots\794228666518339604\handlers\eventHandler.js[39m
+[31m- D:\Z-Hosting\bots\794228666518339604\index.js[39m
+[Bot Base] - [04-12-2026 21:59:54][[31merror[39m]: [31m[BugTracker] Failed to register bug: bug is not defined bug is not defined[39m
+[Bot Base] - [04-12-2026 22:03:04][[31merror[39m]: [31m[BugTracker] Failed to register bug: bug is not defined bug is not defined[39m
+[Bot Base] - [04-12-2026 22:42:22][[31merror[39m]: [31m[BugTracker] Failed to register bug: bug is not defined bug is not defined[39m
+[Bot Base] - [04-12-2026 22:53:15][[31merror[39m]: [31m[BugTracker] Failed to register bug: bug is not defined bug is not defined[39m
+[Bot Base] - [04-12-2026 22:54:32][[31merror[39m]: [31m[BugTracker] Failed to register bug: bug is not defined bug is not defined[39m
+[Bot Base] - [04-12-2026 22:56:04][[31merror[39m]: [31m[BugTracker] Failed to register bug: bug is not defined bug is not defined[39m
+[Bot Base] - [04-13-2026 15:43:42][[31merror[39m]: [31m[BugTracker] Failed to register bug: bug is not defined bug is not defined[39m
+[Bot Base] - [04-13-2026 16:29:16][[31merror[39m]: [31m[EventLoader] Error loading event files: Cannot find module '../Schemas.js/supporters'[39m
+[31mRequire stack:[39m
+[31m- D:\Z-Hosting\bots\794228666518339604\events\threadCreate.js[39m
+[31m- D:\Z-Hosting\bots\794228666518339604\handlers\eventHandler.js[39m
+[31m- D:\Z-Hosting\bots\794228666518339604\index.js Cannot find module '../Schemas.js/supporters'[39m
+[31mRequire stack:[39m
+[31m- D:\Z-Hosting\bots\794228666518339604\events\threadCreate.js[39m
+[31m- D:\Z-Hosting\bots\794228666518339604\handlers\eventHandler.js[39m
+[31m- D:\Z-Hosting\bots\794228666518339604\index.js[39m
+[Bot Base] - [04-13-2026 16:45:58][[31merror[39m]: [31m[BugTracker] Failed to register bug: bug is not defined bug is not defined[39m
+[Bot Base] - [04-13-2026 16:47:35][[31merror[39m]: [31m[EventLoader] Error loading event files: missing ) after argument list missing ) after argument list[39m
+[Bot Base] - [04-13-2026 16:50:56][[31merror[39m]: [31m[EventLoader] Error loading event files: missing ) after argument list missing ) after argument list[39m
+[Bot Base] - [04-13-2026 16:52:56][[31merror[39m]: [31m[BugTracker] Failed to register bug: bug is not defined bug is not defined[39m

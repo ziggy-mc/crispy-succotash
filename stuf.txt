@@ -1,0 +1,98 @@
+666++++++++++++++++++++++++++++++++++++++++++++++++++++++// index
+const checkGiveaways = require('./utils/giveawayChecker.js');
+setInterval(() => checkGiveaways(client), 15000); // check every 15 seconds
+
+// prefix ping
+await interaction.reply({ content: "Pinging..." })
+    const sent = await interaction.fetchReply();
+    const roundTrip = sent.createdTimestamp - interaction.createdTimestamp;
+
+Implement the plan: Great — confirmed requirements:
+- Pull: **strict fast-forward-only**
+- Push: **block protected branches and require PR workflow**
+- Config save: **preserve token by default**, only clear via explicit action
+- Git host: **github.com only**
+- Goal: prioritize reliability (“just works”) over flexible git behaviors
+
+Updated implementation plan:
+
+1. Lock deploy policy in backend
+- Enforce FF-only pull in `/home/runner/work/Z-hosting/Z-hosting/utils/git.js`.
+- Remove/avoid merge/rebase fallback behavior for panel pulls.
+- Add explicit failure message when local/remote diverge: “sync required via PR/manual resolution.”
+
+2. Enforce protected-branch-safe push behavior
+- Before push, detect branch protection rejection and treat as expected policy failure.
+- Return clear UI/API message: direct push blocked; create/update a PR.
+- Never attempt force-push from panel.
+
+3. Fix token handling reliability
+- In `/home/runner/work/Z-hosting/Z-hosting/routes/api.js` deploy config save:
+  - Empty token field = keep existing token.
+  - Add explicit `clearToken` flag/action to remove token.
+- In `/home/runner/work/Z-hosting/Z-hosting/public/js/panel.js`:
+  - Keep current masked UX, add explicit “Clear token” control.
+  - Ensure normal “Save Config” cannot accidentally wipe credentials.
+
+4. Tighten GitHub-only validation
+- Restrict repo URL validation and auth URL construction to `github.com`.
+- Return immediate validation errors for non-GitHub hosts.
+
+5. Improve failure classification and user feedback
+- Standardize pull/push errors into categories (auth, branch/divergence, protection policy, repo state, network).
+- Show short actionable messages in panel; keep detailed sanitized logs in output.
+
+6. Add regression tests for reliability-critical paths
+- Token preservation vs explicit clear.
+- FF-only pull success/failure (divergence, conflicts, untracked overwrite).
+- Push blocked by protected branch.
+- Auth failure messaging and host validation.
+
+7. Define “works” in practical terms
+- Treat complete/intentional policy blocks as non-bugs (e.g., protected branch blocked).
+- Track real failures (unexpected errors) and aim for near-zero over repeated manual tests.
+- Validate by running repeated pull/push scenarios in clean and dirty repo states until no flaky failures remain.
+
+If you want, next I can implement this in small PR-safe steps starting with token-preservation + FF-only enforcement first (highest impact).
+
+[repo check] botDir=[BOT_DIR] exists=true
+[git auth] authenticated_remote=[REPO_URL]
+[repo check] cwd=[BOT_DIR] .git_exists=true .git_is_directory=true
+[git rev-parse] cwd=[BOT_DIR] cmd=git -c credential.helper= -c core.askpass= -c credential.useHttpPath=true rev-parse --is-inside-work-tree
+[git rev-parse] stdout:
+true
+
+[git rev-parse] cwd=[BOT_DIR] cmd=git -c credential.helper= -c core.askpass= -c credential.useHttpPath=true rev-parse --git-dir
+[git rev-parse] stdout:
+.git
+
+[git exclude] Runtime exclude patterns already present
+[gitignore] unified bot .gitignore written: [BOT_DIR]
+[git remote] cwd=[BOT_DIR] cmd=git -c credential.helper= -c core.askpass= -c credential.useHttpPath=true remote get-url origin
+[git remote] stdout:
+[REPO_URL]
+
+[git remote] cwd=[BOT_DIR] cmd=git -c credential.helper= -c core.askpass= -c credential.useHttpPath=true remote set-url origin [REPO_URL]
+[git remote] stdout:
+
+[git remote] cwd=[BOT_DIR] cmd=git -c credential.helper= -c core.askpass= -c credential.useHttpPath=true remote -v
+[git remote] stdout:
+origin	[REPO_URL] (fetch)
+origin	[REPO_URL] (push)
+
+[git symbolic-ref --short -q HEAD] stdout:
+main
+
+[git branch debug] current=main expected=main
+[git add] cwd=[BOT_DIR] cmd=git -c credential.helper= -c core.askpass= -c credential.useHttpPath=true add -A -- . :(exclude).pm2-logs/ :(exclude)*.log :(exclude).zhosting-config.json :(exclude).zhosting-deploy.json :(exclude)node_modules/ :(exclude)temp/ :(exclude)cache/ :(exclude)runtime/
+[git add] stdout:
+
+[git add] stderr:
+warning: in the working copy of '.gitignore', LF will be replaced by CRLF the next time Git touches it
+The following paths are ignored by one of your .gitignore files:
+.pm2-logs
+.zhosting-config.json
+.zhosting-deploy.json
+node_modules
+hint: Use -f if you really want to add them.
+hint: Disable this message with "git config advice.addIgnoredFile false"

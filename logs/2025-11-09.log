@@ -1,0 +1,31 @@
+[Bot Base] - [11-08-2025 20:59:25][[31merror[39m]: [31muncaughtException: Cannot utilize the DAVE protocol as the @snazzah/davey package has not been installed.[39m
+[31m- Use the generateDependencyReport() function for more information.[39m
+
+[31mError: Cannot utilize the DAVE protocol as the @snazzah/davey package has not been installed.[39m
+[31m- Use the generateDependencyReport() function for more information.[39m
+
+[31m    at new DAVESession (/home/ziggymc/Downloads/zigybot/node_modules/@discordjs/voice/dist/index.js:746:13)[39m
+[31m    at Networking.createDaveSession (/home/ziggymc/Downloads/zigybot/node_modules/@discordjs/voice/dist/index.js:1467:21)[39m
+[31m    at Networking.onWsPacket (/home/ziggymc/Downloads/zigybot/node_modules/@discordjs/voice/dist/index.js:1602:20)[39m
+[31m    at VoiceWebSocket.emit (node:events:531:35)[39m
+[31m    at VoiceWebSocket.onMessage (/home/ziggymc/Downloads/zigybot/node_modules/@discordjs/voice/dist/index.js:1239:10)[39m
+[31m    at VoiceWebSocket.ws.onmessage (/home/ziggymc/Downloads/zigybot/node_modules/@discordjs/voice/dist/index.js:1182:39)[39m
+[31m    at callListener (/home/ziggymc/Downloads/zigybot/node_modules/ws/lib/event-target.js:290:14)[39m
+[31m    at WebSocket.onMessage (/home/ziggymc/Downloads/zigybot/node_modules/ws/lib/event-target.js:209:9)[39m
+[31m    at WebSocket.emit (node:events:519:28)[39m
+[31m    at Receiver.receiverOnMessage (/home/ziggymc/Downloads/zigybot/node_modules/ws/lib/websocket.js:1220:20)[39m
+[Bot Base] - [11-08-2025 21:10:37][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/private/music.js: Cannot find module 'ytdl-core-discord'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/commands/slash/private/music.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/commandHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/events/client/ready.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/handlers/eventHandler.js[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js[39m
+[Bot Base] - [11-09-2025 17:19:57][[31merror[39m]: [31m[Interactions] Error executing slash command music: 'emitEventsAfterFetching' does not need to be provided in SpotifyPluginOptions 'emitEventsAfterFetching' does not need to be provided in SpotifyPluginOptions[39m
+[Bot Base] - [11-09-2025 17:21:28][[31merror[39m]: [31m[Interactions] Error executing slash command music: 'leaveOnEmpty' does not need to be provided in DisTubeOptions 'leaveOnEmpty' does not need to be provided in DisTubeOptions[39m
+[Bot Base] - [11-09-2025 17:22:58][[31merror[39m]: [31m[Interactions] Error executing slash command music: 'leaveOnFinish' does not need to be provided in DisTubeOptions 'leaveOnFinish' does not need to be provided in DisTubeOptions[39m
+[Bot Base] - [11-09-2025 17:44:16][[31merror[39m]: [31m[Interactions] Error executing slash command music: 'clientId' does not need to be provided in SpotifyPluginOptions 'clientId' does not need to be provided in SpotifyPluginOptions[39m
+[Bot Base] - [11-09-2025 17:47:46][[31merror[39m]: [31m[Interactions] Error executing slash command music: 'youtubeDL' does not need to be provided in DisTubeOptions 'youtubeDL' does not need to be provided in DisTubeOptions[39m
+[Bot Base] - [11-09-2025 17:48:26][[31merror[39m]: [31m[Interactions] Error executing slash command music: 'youtubeCookie' does not need to be provided in DisTubeOptions 'youtubeCookie' does not need to be provided in DisTubeOptions[39m
+[Bot Base] - [11-09-2025 18:16:19][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/private/music.js: Unexpected token 'catch'[39m
+[Bot Base] - [11-09-2025 18:16:43][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/slash/private/music.js: Unexpected token 'catch'[39m

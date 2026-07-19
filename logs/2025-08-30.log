@@ -1,0 +1,8 @@
+[Bot Base] - [08-30-2025 22:12:56][[31merror[39m]: [31m[Interactions] Error executing slash command reminder: Unknown interaction Unknown interaction[39m
+[Bot Base] - [08-30-2025 22:12:56][[31merror[39m]: [31munhandledRejection: Unknown interaction[39m
+[31mDiscordAPIError[10062]: Unknown interaction[39m
+[31m    at handleErrors (/home/ziggymc/Downloads/zigybot/node_modules/@discordjs/rest/dist/index.js:762:13)[39m
+[31m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+[31m    at async BurstHandler.runRequest (/home/ziggymc/Downloads/zigybot/node_modules/@discordjs/rest/dist/index.js:866:23)[39m
+[31m    at async _REST.request (/home/ziggymc/Downloads/zigybot/node_modules/@discordjs/rest/dist/index.js:1307:22)[39m
+[31m    at async ChatInputCommandInteraction.reply (/home/ziggymc/Downloads/zigybot/node_modules/discord.js/src/structures/interfaces/InteractionResponses.js:200:22)[39m

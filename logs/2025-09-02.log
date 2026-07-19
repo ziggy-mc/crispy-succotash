@@ -1,0 +1,38 @@
+[Bot Base] - [09-01-2025 20:28:45][[31merror[39m]: [31munhandledRejection: Cannot read properties of undefined (reading 'id')[39m
+[31mTypeError: Cannot read properties of undefined (reading 'id')[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/commands/prefix/public/ping.js:14:62)[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/events/guild/messageCreate.js:18:15)[39m
+[31m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+[Bot Base] - [09-01-2025 20:31:29][[31merror[39m]: [31munhandledRejection: Cannot read properties of undefined (reading 'Id')[39m
+[31mTypeError: Cannot read properties of undefined (reading 'Id')[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/commands/prefix/public/ping.js:14:62)[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/events/guild/messageCreate.js:18:15)[39m
+[31m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+[Bot Base] - [09-01-2025 20:33:04][[31merror[39m]: [31munhandledRejection: Cannot read properties of undefined (reading 'id')[39m
+[31mTypeError: Cannot read properties of undefined (reading 'id')[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/commands/prefix/public/ping.js:14:62)[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/events/guild/messageCreate.js:18:15)[39m
+[31m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+[Bot Base] - [09-01-2025 20:46:21][[31merror[39m]: [31munhandledRejection: Cannot read properties of undefined (reading 'fetch')[39m
+[31mTypeError: Cannot read properties of undefined (reading 'fetch')[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/commands/prefix/public/ping.js:15:23)[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/events/guild/messageCreate.js:18:15)[39m
+[31m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+[Bot Base] - [09-01-2025 20:48:28][[31merror[39m]: [31munhandledRejection: message is not defined[39m
+[31mReferenceError: message is not defined[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/commands/prefix/public/ping.js:14:25)[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/events/guild/messageCreate.js:18:15)[39m
+[31m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+[Bot Base] - [09-01-2025 20:49:51][[31merror[39m]: [31munhandledRejection: message is not defined[39m
+[31mReferenceError: message is not defined[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/commands/prefix/public/ping.js:15:55)[39m
+[31m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+[Bot Base] - [09-01-2025 20:51:40][[31merror[39m]: [31munhandledRejection: message is not defined[39m
+[31mReferenceError: message is not defined[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/commands/prefix/public/ping.js:14:25)[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/events/guild/messageCreate.js:18:15)[39m
+[31m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+[Bot Base] - [09-01-2025 20:52:14][[31merror[39m]: [31munhandledRejection: message.editReply is not a function[39m
+[31mTypeError: message.editReply is not a function[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/commands/prefix/public/ping.js:17:13)[39m
+[31m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m

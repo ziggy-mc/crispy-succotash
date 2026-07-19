@@ -1,0 +1,103 @@
+[Bot Base] - [01-17-2026 18:11:41][[31merror[39m]: [31muncaughtException: shardEnd is not defined[39m
+[31mReferenceError: shardEnd is not defined[39m
+[31m    at Object.<anonymous> (/home/ziggymc/Downloads/zigybot/index.js:25:15)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1706:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1839:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1441:32)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1263:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)[39m
+[31m    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)[39m
+[31m    at node:internal/main/run_main_module:36:49[39m
+[Bot Base] - [01-17-2026 18:12:07][[31merror[39m]: [31muncaughtException: shardEnd is not defined[39m
+[31mReferenceError: shardEnd is not defined[39m
+[31m    at Object.<anonymous> (/home/ziggymc/Downloads/zigybot/index.js:23:15)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1706:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1839:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1441:32)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1263:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)[39m
+[31m    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)[39m
+[31m    at node:internal/main/run_main_module:36:49[39m
+[Bot Base] - [01-17-2026 18:12:25][[31merror[39m]: [31muncaughtException: shardEnd is not defined[39m
+[31mReferenceError: shardEnd is not defined[39m
+[31m    at Object.<anonymous> (/home/ziggymc/Downloads/zigybot/index.js:20:15)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1706:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1839:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1441:32)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1263:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)[39m
+[31m    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)[39m
+[31m    at node:internal/main/run_main_module:36:49[39m
+[Bot Base] - [01-17-2026 18:14:14][[31merror[39m]: [31muncaughtException: shardEnd is not defined[39m
+[31mReferenceError: shardEnd is not defined[39m
+[31m    at Object.<anonymous> (/home/ziggymc/Downloads/zigybot/index.js:20:15)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1706:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1839:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1441:32)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1263:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)[39m
+[31m    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)[39m
+[31m    at node:internal/main/run_main_module:36:49[39m
+[Bot Base] - [01-17-2026 18:14:43][[31merror[39m]: [31muncaughtException: totalShards is not defined[39m
+[31mReferenceError: totalShards is not defined[39m
+[31m    at Object.<anonymous> (/home/ziggymc/Downloads/zigybot/index.js:24:15)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1706:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1839:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1441:32)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1263:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)[39m
+[31m    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)[39m
+[31m    at node:internal/main/run_main_module:36:49[39m
+[Bot Base] - [01-17-2026 18:15:20][[31merror[39m]: [31muncaughtException: The shardCount option must be a number greater than or equal to 1[39m
+[31mTypeError [ClientInvalidOption]: The shardCount option must be a number greater than or equal to 1[39m
+[31m    at Client._validateOptions (/home/ziggymc/Downloads/zigybot/node_modules/discord.js/src/client/Client.js:547:13)[39m
+[31m    at new Client (/home/ziggymc/Downloads/zigybot/node_modules/discord.js/src/client/Client.js:81:10)[39m
+[31m    at Object.<anonymous> (/home/ziggymc/Downloads/zigybot/index.js:20:16)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1706:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1839:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1441:32)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1263:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)[39m
+[31m    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)[39m
+[Bot Base] - [01-17-2026 18:16:46][[31merror[39m]: [31muncaughtException: The shardCount option must be a number greater than or equal to 1[39m
+[31mTypeError [ClientInvalidOption]: The shardCount option must be a number greater than or equal to 1[39m
+[31m    at Client._validateOptions (/home/ziggymc/Downloads/zigybot/node_modules/discord.js/src/client/Client.js:547:13)[39m
+[31m    at new Client (/home/ziggymc/Downloads/zigybot/node_modules/discord.js/src/client/Client.js:81:10)[39m
+[31m    at Object.<anonymous> (/home/ziggymc/Downloads/zigybot/index.js:20:16)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1706:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1839:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1441:32)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1263:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)[39m
+[31m    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)[39m
+[Bot Base] - [01-17-2026 18:17:26][[31merror[39m]: [31muncaughtException: The shardCount option must be a number greater than or equal to 1[39m
+[31mTypeError [ClientInvalidOption]: The shardCount option must be a number greater than or equal to 1[39m
+[31m    at Client._validateOptions (/home/ziggymc/Downloads/zigybot/node_modules/discord.js/src/client/Client.js:547:13)[39m
+[31m    at new Client (/home/ziggymc/Downloads/zigybot/node_modules/discord.js/src/client/Client.js:81:10)[39m
+[31m    at Object.<anonymous> (/home/ziggymc/Downloads/zigybot/index.js:20:16)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1706:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1839:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1441:32)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1263:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)[39m
+[31m    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)[39m
+[Bot Base] - [01-17-2026 18:18:14][[31merror[39m]: [31muncaughtException: The shardCount option must be a number greater than or equal to 1[39m
+[31mTypeError [ClientInvalidOption]: The shardCount option must be a number greater than or equal to 1[39m
+[31m    at Client._validateOptions (/home/ziggymc/Downloads/zigybot/node_modules/discord.js/src/client/Client.js:547:13)[39m
+[31m    at new Client (/home/ziggymc/Downloads/zigybot/node_modules/discord.js/src/client/Client.js:81:10)[39m
+[31m    at Object.<anonymous> (/home/ziggymc/Downloads/zigybot/index.js:20:16)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1706:14)[39m
+[31m    at Object..js (node:internal/modules/cjs/loader:1839:10)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1441:32)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1263:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)[39m
+[31m    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)[39m

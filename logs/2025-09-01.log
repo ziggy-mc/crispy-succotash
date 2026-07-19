@@ -1,0 +1,123 @@
+[Bot Base] - [08-31-2025 21:21:26][[31merror[39m]: [31muncaughtException: Cannot find module './utils/giveawayChecker.js'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js[39m
+[31mError: Cannot find module './utils/giveawayChecker.js'[39m
+[31mRequire stack:[39m
+[31m- /home/ziggymc/Downloads/zigybot/index.js[39m
+[31m    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)[39m
+[31m    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)[39m
+[31m    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1192:37)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1463:12)[39m
+[31m    at require (node:internal/modules/helpers:147:16)[39m
+[31m    at Object.<anonymous> (/home/ziggymc/Downloads/zigybot/index.js:46:24)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1706:14)[39m
+[Bot Base] - [08-31-2025 21:40:41][[31merror[39m]: [31munhandledRejection: interaction.deferReply is not a function[39m
+[31mTypeError: interaction.deferReply is not a function[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/commands/prefix/public/ping.js:16:17)[39m
+[31m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+[Bot Base] - [08-31-2025 21:41:03][[31merror[39m]: [31m[Interactions] Error executing slash command info: The reply to this interaction has already been sent or deferred. The reply to this interaction has already been sent or deferred.[39m
+[Bot Base] - [08-31-2025 21:46:19][[31merror[39m]: [31munhandledRejection: interaction.deferReply is not a function[39m
+[31mTypeError: interaction.deferReply is not a function[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/commands/prefix/public/ping.js:16:17)[39m
+[31m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+[Bot Base] - [08-31-2025 21:47:40][[31merror[39m]: [31munhandledRejection: interaction.fetchReply is not a function[39m
+[31mTypeError: interaction.fetchReply is not a function[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/commands/prefix/public/ping.js:15:36)[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/events/guild/messageCreate.js:18:15)[39m
+[31m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+[Bot Base] - [08-31-2025 21:48:35][[31merror[39m]: [31munhandledRejection: interaction.fetchReply is not a function[39m
+[31mTypeError: interaction.fetchReply is not a function[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/commands/prefix/public/ping.js:16:36)[39m
+[31m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+[Bot Base] - [08-31-2025 21:49:56][[31merror[39m]: [31munhandledRejection: sent is not defined[39m
+[31mReferenceError: sent is not defined[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/commands/prefix/public/ping.js:16:23)[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/events/guild/messageCreate.js:18:15)[39m
+[31m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+[Bot Base] - [08-31-2025 21:50:36][[31merror[39m]: [31munhandledRejection: Cannot read properties of undefined (reading 'ping')[39m
+[31mTypeError: Cannot read properties of undefined (reading 'ping')[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/commands/prefix/public/ping.js:17:33)[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/events/guild/messageCreate.js:18:15)[39m
+[31m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+[Bot Base] - [08-31-2025 21:51:15][[31merror[39m]: [31munhandledRejection: Cannot read properties of undefined (reading 'ping')[39m
+[31mTypeError: Cannot read properties of undefined (reading 'ping')[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/commands/prefix/public/ping.js:15:33)[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/events/guild/messageCreate.js:18:15)[39m
+[31m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+[Bot Base] - [08-31-2025 21:52:43][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/prefix/public/ping.js: Unexpected token '}'[39m
+[Bot Base] - [08-31-2025 21:53:08][[31merror[39m]: [31munhandledRejection: Cannot read properties of undefined (reading 'fetch')[39m
+[31mTypeError: Cannot read properties of undefined (reading 'fetch')[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/commands/prefix/public/ping.js:16:23)[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/events/guild/messageCreate.js:18:15)[39m
+[31m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+[Bot Base] - [08-31-2025 21:53:31][[31merror[39m]: [31munhandledRejection: val is not a non-empty string or a valid number. val=undefined[39m
+[31mError: val is not a non-empty string or a valid number. val=undefined[39m
+[31m    at module.exports (/home/ziggymc/Downloads/zigybot/node_modules/ms/index.js:34:9)[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/commands/prefix/public/ping.js:17:20)[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/events/guild/messageCreate.js:18:15)[39m
+[31m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+[Bot Base] - [08-31-2025 21:56:35][[31merror[39m]: [31munhandledRejection: message is not defined[39m
+[31mReferenceError: message is not defined[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/commands/prefix/public/ping.js:15:37)[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/events/guild/messageCreate.js:18:15)[39m
+[31m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+[Bot Base] - [08-31-2025 21:56:55][[31merror[39m]: [31munhandledRejection: message is not defined[39m
+[31mReferenceError: message is not defined[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/commands/prefix/public/ping.js:15:37)[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/events/guild/messageCreate.js:18:15)[39m
+[31m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+[Bot Base] - [08-31-2025 21:58:46][[31merror[39m]: [31munhandledRejection: sentMessage is not defined[39m
+[31mReferenceError: sentMessage is not defined[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/commands/prefix/public/ping.js:15:21)[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/events/guild/messageCreate.js:18:15)[39m
+[31m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+[Bot Base] - [08-31-2025 22:01:11][[31merror[39m]: [31munhandledRejection: Cannot read properties of undefined (reading 'ping')[39m
+[31mTypeError: Cannot read properties of undefined (reading 'ping')[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/commands/prefix/public/ping.js:15:45)[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/events/guild/messageCreate.js:18:15)[39m
+[31m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+[Bot Base] - [08-31-2025 22:01:40][[31merror[39m]: [31munhandledRejection: message is not defined[39m
+[31mReferenceError: message is not defined[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/commands/prefix/public/ping.js:22:53)[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/events/guild/messageCreate.js:18:15)[39m
+[31m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+[Bot Base] - [08-31-2025 22:02:53][[31merror[39m]: [31munhandledRejection: message is not defined[39m
+[31mReferenceError: message is not defined[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/commands/prefix/public/ping.js:15:29)[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/events/guild/messageCreate.js:18:15)[39m
+[31m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+[Bot Base] - [08-31-2025 22:04:04][[31merror[39m]: [31munhandledRejection: Expected the value to be an object, but received string instead[39m
+[31mError: Expected the value to be an object, but received string instead[39m
+[31m    at _ObjectValidator.handle (/home/ziggymc/Downloads/zigybot/node_modules/@sapphire/shapeshift/dist/cjs/index.cjs:2070:9)[39m
+[31m    at _ObjectValidator.parse (/home/ziggymc/Downloads/zigybot/node_modules/@sapphire/shapeshift/dist/cjs/index.cjs:972:90)[39m
+[31m    at EmbedBuilder.setFooter (/home/ziggymc/Downloads/zigybot/node_modules/@discordjs/builders/dist/index.js:339:26)[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/commands/prefix/public/ping.js:25:10)[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/events/guild/messageCreate.js:18:15)[39m
+[31m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+[Bot Base] - [08-31-2025 22:05:22][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/prefix/public/ping.js: Unexpected token 'new'[39m
+[Bot Base] - [08-31-2025 22:05:53][[31merror[39m]: [31munhandledRejection: Expected the value to be an object, but received string instead[39m
+[31mError: Expected the value to be an object, but received string instead[39m
+[31m    at _ObjectValidator.handle (/home/ziggymc/Downloads/zigybot/node_modules/@sapphire/shapeshift/dist/cjs/index.cjs:2070:9)[39m
+[31m    at _ObjectValidator.parse (/home/ziggymc/Downloads/zigybot/node_modules/@sapphire/shapeshift/dist/cjs/index.cjs:972:90)[39m
+[31m    at EmbedBuilder.setFooter (/home/ziggymc/Downloads/zigybot/node_modules/@discordjs/builders/dist/index.js:339:26)[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/commands/prefix/public/ping.js:25:10)[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/events/guild/messageCreate.js:18:15)[39m
+[31m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+[Bot Base] - [08-31-2025 22:06:40][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/prefix/public/ping.js: Unexpected token '.'[39m
+[Bot Base] - [08-31-2025 22:06:48][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/prefix/public/ping.js: Unexpected token '.'[39m
+[Bot Base] - [08-31-2025 22:07:16][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/prefix/public/ping.js: Unexpected token '.'[39m
+[Bot Base] - [08-31-2025 22:07:42][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/prefix/public/ping.js: Unexpected token '.'[39m
+[Bot Base] - [08-31-2025 22:07:53][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/prefix/public/ping.js: missing ) after argument list[39m
+[Bot Base] - [08-31-2025 22:08:19][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/prefix/public/ping.js: missing ) after argument list[39m
+[Bot Base] - [08-31-2025 22:08:41][[31merror[39m]: [31munhandledRejection: Expected the value to be an object, but received string instead[39m
+[31mError: Expected the value to be an object, but received string instead[39m
+[31m    at _ObjectValidator.handle (/home/ziggymc/Downloads/zigybot/node_modules/@sapphire/shapeshift/dist/cjs/index.cjs:2070:9)[39m
+[31m    at _ObjectValidator.parse (/home/ziggymc/Downloads/zigybot/node_modules/@sapphire/shapeshift/dist/cjs/index.cjs:972:90)[39m
+[31m    at EmbedBuilder.setFooter (/home/ziggymc/Downloads/zigybot/node_modules/@discordjs/builders/dist/index.js:339:26)[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/commands/prefix/public/ping.js:24:8)[39m
+[31m    at Object.execute (/home/ziggymc/Downloads/zigybot/events/guild/messageCreate.js:18:15)[39m
+[31m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+[Bot Base] - [08-31-2025 22:17:20][[31merror[39m]: [31m[CommandLoader] Failed to load /home/ziggymc/Downloads/zigybot/commands/prefix/public/ping.js: PermissionFlagsBits is not defined[39m

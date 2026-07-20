@@ -2,7 +2,7 @@ const { EmbedBuilder } = require('discord.js');
 const Bug = require('../Schemas.js/cBug');
 const GuildConfig = require('../Schemas.js/guildConfig');
 const Supporter = require('../Schemas.js/Supporter');
-const UserSettings = require('../Schemas.js/bugUserSettings'); // <-- ADDED
+const UserSettings = require('../Schemas.js/BugUserSettings'); // <-- ADDED
 const { premiumFooter } = require('../utils/bugQueue');
 const { onBugCreated } = require('../utils/bugStatsService');
 

@@ -171,10 +171,6 @@ app.get("/", (req, res) => res.send(`Shard ${shardStart}-${shardEnd} alive!`));
 app.get("/ping", (req, res) => res.send(`Shard ${shardStart}-${shardEnd} pong!`));
 app.listen(PORT, () => console.log(`Shard ${shardStart}-${shardEnd} web server running on port ${PORT}`));
 
-// --- MESSAGE TRACKER ---
-const { trackMessage } = require("./utils/spamTracker.js");
-client.on("messageCreate", (message) => { if (!message.author.bot) trackMessage(message.author.id); });
-
 
 // --- ERROR HANDLING ---
 process.on("unhandledRejection", (reason) => logger.error("Unhandled Rejection:", reason));

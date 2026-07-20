@@ -1,19 +1,6 @@
 {
     "sections": [
         {
-            "name": "What's New?",
-            "published": "2026-06-04",
-            "embeds": [
-                {
-                    "category": "Optimization",
-                    "title": "Bug Fixes",
-                    "description": "We have patches a couple bugs causing the bot to respond slower. We also patched a couple known bugs.",
-                    "footer": "",
-                    "thumbnail": "https://img.devlynlabs.com/img/64x64/1a1a2e/FFFFFF?text=Version+1.3.2&font=roboto&gradient=5900B3%2C9333EA&angle=135"
-                }
-            ]
-        },
-        {
             "name": "Known Bugs",
             "published": "2026-06-07",
             "embeds": [
@@ -42,6 +29,19 @@
                     "title": "End of bug title",
                     "description": "We have increased the number of letters and numbers at the end of a bug. This allow more bogs to be open at a time. (Global)",
                     "footer": ""
+                }
+            ]
+        },
+        {
+            "name": "What's New?",
+            "published": "2026-07-20",
+            "embeds": [
+                {
+                    "category": "Optimization",
+                    "title": "Bug Fixes",
+                    "description": "We have patches a couple bugs causing the bot to respond slower. We also patched a couple known bugs.",
+                    "footer": "",
+                    "thumbnail": "https://img.devlynlabs.com/img/64x64/1a1a2e/FFFFFF?text=Version+1.3.2&font=roboto&gradient=5900B3%2C9333EA&angle=135"
                 }
             ]
         }

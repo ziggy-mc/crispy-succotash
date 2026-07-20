@@ -43,6 +43,13 @@
                     "description": "We have patches a couple bugs causing the bot to respond slower. We also patched a couple known bugs.",
                     "footer": "",
                     "thumbnail": "https://img.devlynlabs.com/img/64x64/1a1a2e/FFFFFF?text=Version+1.3.2&font=roboto&gradient=5900B3%2C9333EA&angle=135"
+                },
+                {
+                    "category": "Discovery",
+                    "title": "Vote",
+                    "description": "We have launched our bot on Devlyn Labs! [Vote Here!](https://devlynlabs.com/v/muizi)",
+                    "footer": "Devlyn Labs is not a Partner nor a Controller of MUIZI Tracker.",
+                    "thumbnail": "https://img.devlynlabs.com/img/64x64/1a1a2e/FFFFFF?text=Version+1.3.2&font=roboto&gradient=5900B3%2C9333EA&angle=135"
                 }
             ]
         }

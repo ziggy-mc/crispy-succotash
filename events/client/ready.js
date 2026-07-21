@@ -49,7 +49,7 @@ module.exports = {
     client.logger.info(`${client.user.tag} is online!`);
 
     const updateStatus = () => {
-      client.user.setActivity("v1.3.1 | Tracking Bugs", {
+      client.user.setActivity("v1.3.2 | Tracking Bugs", {
         type: ActivityType.Custom,
       });
     };

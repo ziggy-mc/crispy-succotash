@@ -84,6 +84,20 @@ client.once("ready", () => {
   setInterval(() => {
     bugCleanup(client);
   }, 5 * 60 * 1000);
+  
+  setInterval(() => {
+    const m = process.memoryUsage();
+
+    console.log({
+        rss: `${(m.rss / 1024 / 1024).toFixed(1)} MB`,
+        heapUsed: `${(m.heapUsed / 1024 / 1024).toFixed(1)} MB`,
+        heapTotal: `${(m.heapTotal / 1024 / 1024).toFixed(1)} MB`,
+        cooldowns: client.cooldowns.size,
+        guilds: client.guilds.cache.size,
+        users: client.users.cache.size,
+        channels: client.channels.cache.size,
+    });
+}, 30 * 60 * 1000);
 
   setInterval(() => {
     reconcileCurrentState().catch((err) => client.logger.error(`[BugStats] reconcile failed: ${err.message}`, err));

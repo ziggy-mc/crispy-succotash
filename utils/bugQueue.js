@@ -70,14 +70,16 @@ async function dmReporterUpdate(client, reporterId, bug, event) {
 
     if (footer) embed.setFooter(footer);
 
-    // For resolved bugs, offer premium reporters a reopen button
+        // For resolved bugs, offer premium reporters a reopen button.
+    // Never show this on deletion notifications because the bug no longer exists.
     let components = [];
-    if (bug.status === 'Resolved' && supporter) {
+    if (event !== 'deleted' && bug.status === 'Resolved' && supporter) {
         embed.addFields({
-            name:   '🔓 Reopen Option',
-            value:  'As a supporter you can request to reopen this report.\n⏰ **This reopen option expires in 24 hours**',
+            name: '🔓 Reopen Option',
+            value: 'As a supporter you can request to reopen this report.\n⏰ **This reopen option expires in 24 hours**',
             inline: false,
         });
+
         components = [
             new ActionRowBuilder().addComponents(
                 new ButtonBuilder()

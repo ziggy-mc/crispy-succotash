@@ -1,40 +1,6 @@
 {
-    "sections": [
-        {
-            "name": "Known Bugs",
-            "published": "2026-06-07",
-            "embeds": [
-                {
-                    "category": "Known Issue",
-                    "title": "Reopen Bug",
-                    "description": "When the automated system/staff member deletes a bug thread, it will still send the reopen button even if the thread is gone.",
-                    "footer": ""
-                }
-            ]
-        },
          {
             "name": "Previous Updates",
-            "version": "1.3.2",
-            "published": "2026-07-20",
-            "embeds": [
-                {
-                    "category": "Optimization",
-                    "title": "Bug Fixes",
-                    "description": "We have patches a couple bugs causing the bot to respond slower. We also patched a couple known bugs.",
-                    "footer": "",
-                    "thumbnail": "https://img.devlynlabs.com/img/64x64/1a1a2e/FFFFFF?text=Version+1.3.2&font=roboto&gradient=5900B3%2C9333EA&angle=135"
-                },
-                {
-                    "category": "Discovery",
-                    "title": "Vote",
-                    "description": "We have launched our bot on Devlyn Labs! [Vote Here!](https://devlynlabs.com/v/muizi)",
-                    "footer": "Devlyn Labs is not a Partner nor a Controller of MUIZI Tracker.",
-                    "thumbnail": "https://cdn.ziggymc.me/c971ab65-2a85-4e61-b4c2-e880ba64f775.png"
-                }
-            ]
-        },
-        {
-            "name": "What's New?",
             "version": "1.4.0",
             "published": "2026-07-25",
             "embeds": [
@@ -51,6 +17,20 @@
                     "description": "We have updated section 5 our privacy policy, please review the it before continuing using the bot. [View Here](https://bugs.ziggymc.me/privacy)",
                     "footer": "",
                     "thumbnail": ""
+                }
+            ]
+        },
+        {
+            "name": "What's New?",
+            "version": "1.4.1",
+            "published": "2026-07-25",
+            "embeds": [
+                {
+                    "category": "Bug System",
+                    "title": "Reopen Requests",
+                    "description": "The bot will no longer allow you to reopen a bug if the thread was deleted via commands or bug expiration.",
+                    "footer": "Premium members only.",
+                    "thumbnail": "https://img.devlynlabs.com/img/64x64/1a1a2e/FFFFFF?text=Version+1.4.1&font=roboto&gradient=5900B3%2C9333EA&angle=135"
                 }
             ]
         }

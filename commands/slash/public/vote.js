@@ -3,6 +3,7 @@ const { SlashCommandBuilder } = require("discord.js");
 module.exports = {
   data: new SlashCommandBuilder().setName("vote").setDescription("Vote for the discord bot"),
   async execute(interaction) {
+    try {
     await interaction.reply({
       content: "Vote for the bot on [Devlyn Labs](https://bugs.ziggymc.me/vote).",
       flags: 64,

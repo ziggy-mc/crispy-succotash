@@ -18,6 +18,9 @@ const {
   refreshAllDashboardCaches,
   reconcileCurrentState,
 } = require("./utils/bugStatsService");
+const {
+  startPremiumCleanup
+} = require("./utils/premiumCleanup");
 
 
 // --- Shard setup ---
@@ -80,6 +83,7 @@ client.once("ready", () => {
   refreshAllDashboardCaches().catch((err) => client.logger.error(`[BugDashboard] initial refresh failed: ${err.message}`, err));
 
   bugCleanup(client);
+  startPremiumCleanup(client);
 
   setInterval(() => {
     bugCleanup(client);

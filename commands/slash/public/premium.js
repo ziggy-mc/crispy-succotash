@@ -22,12 +22,24 @@ function unix(date) {
 }
 
 function getExpiration(days) {
-  const expiration = new Date();
+  const now = new Date();
 
-  expiration.setDate(expiration.getDate() + days + 1);
-  expiration.setHours(0, 0, 0, 0);
+  const target = new Date(now);
+  target.setDate(target.getDate() + days + 1);
 
-  return expiration;
+  const dateString = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "America/New_York",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit"
+  }).format(target);
+
+  // Eastern midnight for the calculated date.
+  const easternMidnight = new Date(
+    `${dateString}T00:00:00-04:00`
+  );
+
+  return easternMidnight;
 }
 
 module.exports = {

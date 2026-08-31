@@ -1,4 +1,4 @@
-const PremiumRedeem = require("../models/PremiumRedeem");
+const PremiumRedeem = require("../Schemas.js/PremiumRedeem");
 
 const TIME_ZONE = "America/New_York";
 

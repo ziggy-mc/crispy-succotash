@@ -6,7 +6,7 @@ const PremiumRedeem = require("../../../Schemas.js/PremiumRedeem");
 const {
   getCredits,
   deductCredits
-} = require("../utils/devlyn");
+} = require("../../../utils/devlyn");
 
 const REDEEM_COOLDOWN = 30 * 24 * 60 * 60 * 1000;
 

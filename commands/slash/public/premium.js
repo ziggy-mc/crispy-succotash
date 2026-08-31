@@ -71,7 +71,7 @@ module.exports = {
         const balance = await getCredits(userId);
 
         let message =
-          `**Muzi Tracker Premium**\n\n` +
+          `**MUIZI Tracker Premium**\n\n` +
           `DL Credits: **${balance}**\n\n` +
           `**Premium Shop**\n` +
           `1 Day - 1 credit\n` +

@@ -27,19 +27,33 @@ function getExpiration(days) {
   const target = new Date(now);
   target.setDate(target.getDate() + days + 1);
 
-  const dateString = new Intl.DateTimeFormat("en-CA", {
+  const parts = new Intl.DateTimeFormat("en-US", {
     timeZone: "America/New_York",
     year: "numeric",
     month: "2-digit",
     day: "2-digit"
-  }).format(target);
+  }).formatToParts(target);
 
-  // Eastern midnight for the calculated date.
-  const easternMidnight = new Date(
-    `${dateString}T00:00:00-04:00`
+  const year = parts.find(part => part.type === "year").value;
+  const month = parts.find(part => part.type === "month").value;
+  const day = parts.find(part => part.type === "day").value;
+
+  const easternDate = new Date(
+    `${year}-${month}-${day}T00:00:00`
   );
 
-  return easternMidnight;
+  const offsetParts = new Intl.DateTimeFormat("en-US", {
+    timeZone: "America/New_York",
+    timeZoneName: "longOffset"
+  }).formatToParts(easternDate);
+
+  const offset = offsetParts.find(
+    part => part.type === "timeZoneName"
+  ).value.replace("GMT", "");
+
+  return new Date(
+    `${year}-${month}-${day}T00:00:00${offset}`
+  );
 }
 
 module.exports = {
@@ -163,41 +177,7 @@ module.exports = {
         });
       }
 
-      const guild = interaction.guild;
-
-      if (!guild) {
-        return interaction.reply({
-          content: "This command must be used inside a server.",
-          ephemeral: true
-        });
-      }
-
-      const premiumRoleId = process.env.PREMIUM_ROLE_ID;
-
-      if (!premiumRoleId) {
-        throw new Error("PREMIUM_ROLE_ID is not configured.");
-      }
-
-      const premiumRole = guild.roles.cache.get(
-        premiumRoleId
-      );
-
-      if (!premiumRole) {
-        throw new Error(
-          `Premium role ${premiumRoleId} was not found.`
-        );
-      }
-
-
-      const member = await guild.members.fetch(userId);
-
-      if (member.roles.cache.has(premiumRoleId)) {
-        return interaction.reply({
-          content:
-            "You already have the Premium role. You cannot redeem Premium again yet.",
-          ephemeral: true
-        });
-      }
+      
 
 
       await deductCredits(
@@ -224,10 +204,7 @@ module.exports = {
       );
 
 
-      await member.roles.add(
-        premiumRole,
-        `Muzi Tracker Premium purchased with ${duration} DL credits`
-      );
+      
 
       return interaction.reply({
         content:

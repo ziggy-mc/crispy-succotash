@@ -193,7 +193,7 @@ module.exports = {
       await deductCredits(
         userId,
         duration,
-        `Muzi Tracker Premium - ${duration} day${
+        `MTR Premium - ${duration} day${
           duration === 1 ? "" : "s"
         }`
       );

@@ -21,13 +21,11 @@ function unix(date) {
   return Math.floor(date.getTime() / 1000);
 }
 
-function getEndOfDay(daysFromToday) {
-  const now = new Date();
+function getExpiration(days) {
+  const expiration = new Date();
 
-  const expiration = new Date(now);
-
-  expiration.setHours(23, 59, 59, 999);
-  expiration.setDate(expiration.getDate() + daysFromToday);
+  expiration.setDate(expiration.getDate() + days + 1);
+  expiration.setHours(0, 0, 0, 0);
 
   return expiration;
 }
@@ -198,7 +196,7 @@ module.exports = {
         }`
       );
 
-      const premiumUntil = getEndOfDay(duration);
+      const premiumUntil = getExpiration(duration);
 
       await PremiumRedeem.findOneAndUpdate(
         { userId },

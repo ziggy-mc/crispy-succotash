@@ -1,4 +1,5 @@
 const PremiumRedeem = require("../Schemas.js/PremiumRedeem");
+const Supporter = require("../Schemas.js/Supporter");
 
 const TIME_ZONE = "America/New_York";
 
@@ -15,7 +16,6 @@ function getLocalTime() {
   });
 
   const parts = formatter.formatToParts(new Date());
-
   const values = {};
 
   for (const part of parts) {
@@ -39,54 +39,18 @@ async function cleanupExpiredPremium(client) {
 
     for (const redemption of expired) {
       try {
-        for (const guild of client.guilds.cache.values()) {
-          try {
-            const member = await guild.members
-              .fetch(redemption.userId)
-              .catch(() => null);
+        await Supporter.deleteOne({
+          userId: redemption.userId
+        });
 
-            if (!member) continue;
-
-            const premiumRoleId =
-              process.env.PREMIUM_ROLE_ID;
-
-            if (
-              premiumRoleId &&
-              member.roles.cache.has(premiumRoleId)
-            ) {
-              await member.roles.remove(
-                premiumRoleId,
-                "Muzi Tracker Premium expired"
-              );
-            }
-          } catch (error) {
-            console.error(
-              `Failed removing Premium from ${redemption.userId}:`,
-              error
-            );
-          }
-        }
-
-  
-        const nextPurchase = new Date(
-          redemption.lastPurchaseAt.getTime() +
-            30 * 24 * 60 * 60 * 1000
+        console.log(
+          `[Premium] Removed supporter entitlement for ${redemption.userId}.`
         );
 
-        if (nextPurchase <= now) {
-          await PremiumRedeem.deleteOne({
-            userId: redemption.userId
-          });
-        } else {
-          await PremiumRedeem.updateOne(
-            { userId: redemption.userId },
-            {
-              $set: {
-                premiumUntil: new Date(0)
-              }
-            }
-          );
-        }
+        console.log(
+          `[Premium] Kept PremiumRedeem for ${redemption.userId} for cooldown tracking.`
+        );
+
       } catch (error) {
         console.error(
           `Premium cleanup failed for ${redemption.userId}:`,
@@ -127,9 +91,8 @@ function startPremiumCleanup(client) {
     }
   };
 
-
+  // Run once when the bot starts.
   cleanupExpiredPremium(client).catch(console.error);
-
 
   setInterval(check, 60 * 1000);
 

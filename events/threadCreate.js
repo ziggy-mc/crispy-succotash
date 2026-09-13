@@ -117,19 +117,33 @@ module.exports = {
             );
 
             // ============================
-            // APPLY INITIAL DISCORD TAG
-            // ============================
-            try {
-                await applyStatusTag(
-                    fullThread,
-                    thread.guild.id,
-                    'Open'
-                );
-            } catch (tagErr) {
-                client.logger.warn(
-                    `[BugTracker] Failed to apply Received tag to ${bugId}: ${tagErr.message}`
-                );
-            }
+// APPLY INITIAL DISCORD TAG
+// ============================
+try {
+    await applyStatusTag(
+        fullThread,
+        thread.guild.id,
+        'Open'
+    );
+} catch (tagErr) {
+    client.logger.warn(
+        `[BugTracker] Failed to apply Received tag to ${bugId}: ${tagErr.message}`
+    );
+
+    await fullThread.send({
+        embeds: [
+            new EmbedBuilder()
+                .setTitle('⚠️ Tracker Setup Required')
+                .setColor(0xe74c3c)
+                .setDescription(
+                    `This report was created, but I could not apply the **Received** tag.\n\n` +
+                    `A required tracker tag may be missing or the forum configuration may have changed.\n\n` +
+                    `An administrator should run \`/setup forum\` again to recreate and configure the tracker tags.`
+                )
+                .setTimestamp()
+        ]
+    }).catch(() => {});
+}
 
             // ============================
             // QUEUED BUG LOGIC

@@ -2,6 +2,7 @@ const {
     SlashCommandBuilder, EmbedBuilder, PermissionFlagsBits, ChannelType,
 } = require('discord.js');
 const GuildConfig = require('../../../Schemas.js/guildConfig');
+const { ensureStatusTags } = require('../../../utils/bugForumTags');
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -47,22 +48,41 @@ module.exports = {
         if (sub === 'forum') {
             const channel = interaction.options.getChannel('channel');
 
-            await GuildConfig.findOneAndUpdate(
-                { guildId: interaction.guildId },
-                { $set: { bugForumChannelId: channel.id } },
-                { upsert: true, new: true }
-            );
+            try {
+                const tagIds = await ensureStatusTags(
+                    channel,
+                    interaction.guildId
+                );
 
-            return interaction.reply({
-                embeds: [
-                    new EmbedBuilder()
-                        .setTitle('✅ Bug Tracker Configured')
-                        .setColor(0x2ecc71)
-                        .setDescription(`Bug reports will now be tracked in <#${channel.id}>.\n\nWhen someone creates a thread in that forum, the bot will automatically assign it a bug ID and notify the reporter via DM. (Requires premium to receive dm)`)
-                        .setTimestamp(),
-                ],
-                ephemeral: true,
-            });
+                await GuildConfig.findOneAndUpdate(
+                    { guildId: interaction.guildId },
+                    {
+                        $set: {
+                            bugForumChannelId: channel.id,
+                            ...tagIds,
+                        },
+                    },
+                    { upsert: true, new: true }
+                );
+
+                return interaction.reply({
+                    embeds: [
+                        new EmbedBuilder()
+                            .setTitle('✅ Bug Tracker Configured')
+                            .setColor(0x2ecc71)
+                            .setDescription(`Bug reports will now be tracked in <#${channel.id}>.\n\nWhen someone creates a thread in that forum, the bot will automatically assign it a bug ID and notify the reporter via DM. (Requires premium to receive dm)`)
+                            .setTimestamp(),
+                    ],
+                    ephemeral: true,
+                });
+            } catch (err) {
+                console.error('[BugTracker] Failed to configure forum:', err);
+
+                return interaction.reply({
+                    content: '❌ I could not create or configure the bug tracker tags. Make sure I have permission to manage the forum channel.',
+                    ephemeral: true,
+                });
+            }
         }
 
         if (sub === 'staffrole') {
@@ -88,6 +108,7 @@ module.exports = {
 
         if (sub === 'pingrole') {
             const role = interaction.options.getRole('role');
+
             // If @everyone is selected, clear the ping role
             const roleId = role.id === interaction.guildId ? null : role.id;
 

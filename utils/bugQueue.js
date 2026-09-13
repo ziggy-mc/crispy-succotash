@@ -42,19 +42,19 @@ async function dmReporterUpdate(client, reporterId, bug, event) {
 
     if (event === 'deleted') {
         embed = new EmbedBuilder()
-            .setTitle('🗑️ Bug Report Removed')
+            .setTitle('🗑️ Report Removed')
             .setColor(0xe74c3c)
-            .setDescription(`Your bug report \`${bug.bugId}\` has been removed by staff.`)
+            .setDescription(`Your report \`${bug.bugId}\` has been removed by staff.`)
             .addFields(
                 { name: '📋 Original Title', value: bug.originalTitle,   inline: false },
-                { name: '🔗 Bug ID',          value: `\`${bug.bugId}\``, inline: true  },
+                { name: '🔗 Custom Thread ID',          value: `\`${bug.bugId}\``, inline: true  },
             )
             .setTimestamp();
     } else {
         embed = new EmbedBuilder()
-            .setTitle('📊 Bug Status Updated')
+            .setTitle('📊 Status Updated')
             .setColor(STATUS_COLOR[bug.status] ?? 0x3498db)
-            .setDescription(`Your bug report \`${bug.bugId}\` has been updated.`)
+            .setDescription(`Your report \`${bug.bugId}\` has been updated.`)
             .addFields(
                 { name: '📋 Original Title', value: bug.originalTitle,                             inline: false },
                 { name: '📊 New Status',      value: `${STATUS_EMOJI[bug.status]} ${bug.status}`, inline: true  },
@@ -120,11 +120,11 @@ async function promoteQueuedBug(client, guildId, reporterId) {
 
         if (thread) {
             const embed = new EmbedBuilder()
-                .setTitle('✅ Bug Report Now Active!')
+                .setTitle('✅ Report Now Active!')
                 .setColor(0x2ecc71)
                 .setDescription(
-                    `Your queued bug report has moved out of the queue and is now being tracked.\n\n` +
-                    `Use \`/bug\` with your bug ID to check its status at any time.`
+                    `Your queued report has moved out of the queue and is now being tracked.\n\n` +
+                    `Use \`/thread\` with your Custom Thread ID to check its status at any time.`
                 )
                 .addFields(
                     { name: '📋 Bug ID',    value: `\`${queued.bugId}\``,    inline: true },
@@ -142,14 +142,14 @@ async function promoteQueuedBug(client, guildId, reporterId) {
         const supporter = await Supporter.findOne({ userId: reporterId });
         const footer    = premiumFooter(supporter);
         const dmEmbed = new EmbedBuilder()
-            .setTitle('✅ Your Queued Bug Report Is Now Active')
+            .setTitle('✅ Your Queued Report Is Now Active')
             .setColor(0x2ecc71)
             .setDescription(
-                `Your queued bug report has a slot and is now being tracked!\n\n` +
+                `Your queued report has a slot and is now being tracked!\n\n` +
                 `You can check its status with \`/bug\`.`
             )
             .addFields(
-                { name: '📋 Bug ID',   value: `\`${queued.bugId}\``,       inline: true },
+                { name: '📋 Custom Thread ID',   value: `\`${queued.bugId}\``,       inline: true },
                 { name: '🔗 Thread',   value: `<#${queued.threadId}>`,     inline: true },
                 { name: '📊 Status',   value: '🔴 Open',                   inline: true },
             )

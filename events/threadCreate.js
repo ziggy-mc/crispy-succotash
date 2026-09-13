@@ -7,7 +7,7 @@ const { premiumFooter } = require('../utils/bugQueue');
 const { onBugCreated } = require('../utils/bugStatsService');
 const { applyStatusTag } = require('../utils/bugForumTags');
 
-const STATUS_EMOJI = { 'Received': '🔴', 'In Progress': '🟡', 'Resolved': '🟢' };
+const STATUS_EMOJI = { 'Open': '🔴', 'In Progress': '🟡', 'Resolved': '🟢' };
 
 function randomLetters(n) {
     const chars = 'abcdefghijklmnopqrstuvwxyz';
@@ -106,7 +106,7 @@ module.exports = {
                 threadId: fullThread.id,
                 originalTitle,
                 reporterId: ownerId,
-                status: 'Received',
+                status: 'Open',
                 isQueued,
             });
 

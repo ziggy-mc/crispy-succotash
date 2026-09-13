@@ -145,14 +145,14 @@ module.exports = {
                     .setTitle('⏳ Bug Report Queued')
                     .setColor(0xf39c12)
                     .setDescription(
-                        `You already have **${activeCount}** active bug report${activeCount !== 1 ? 's' : ''}. ` +
+                        `You already have **${activeCount}** active report${activeCount !== 1 ? 's' : ''}. ` +
                         `This report has been placed in the queue and will become active once one of your current reports is resolved or removed.\n\n` +
                         (isSupporter
-                            ? `As a supporter you can have up to **3** active reports.`
-                            : `Regular users can have **1** active report at a time.`)
+                            ? `As a supporter you can have up to **5** active reports.`
+                            : `Regular users can have **2** active report at a time.`)
                     )
                     .addFields(
-                        { name: '📋 Bug ID', value: `\`${bugId}\``, inline: true },
+                        { name: '📋 Custom Thread ID', value: `\`${bugId}\``, inline: true },
                         { name: '📋 Queue Position', value: `${queuePos}`, inline: true },
                     )
                     .setTimestamp();
@@ -194,15 +194,15 @@ module.exports = {
                 .setTitle('🐛 Bug Report Received')
                 .setColor(0x3498db)
                 .setDescription(
-                    `Thank you for reporting a bug! We appreciate your help in making things better.\n\n` +
-                    `You can check the status of your report at any time using \`/bug\` and entering your bug ID.`
+                    `Thank you for opening a thread! We appreciate your help in making things better.\n\n` +
+                    `You can check the status of your report at any time using \`/thread\` and entering your Custom Thread ID.`
                 )
                 .addFields(
-                    { name: '📋 Bug ID', value: `\`${bugId}\``, inline: true },
+                    { name: '📋 Custom Thread ID', value: `\`${bugId}\``, inline: true },
                     { name: '📋 Title', value: originalTitle, inline: true },
                     { name: '👤 Reporter', value: `<@${ownerId}>`, inline: true },
                     { name: '🔗 Thread', value: `<#${fullThread.id}>`, inline: false },
-                    { name: '📊 Status', value: `${STATUS_EMOJI['Open']} Open`, inline: true },
+                    { name: '📊 Status', value: `${STATUS_EMOJI['Open']} Received`, inline: true },
                 )
                 .setTimestamp();
 
@@ -251,11 +251,11 @@ module.exports = {
                 .setTitle('🐛 Bug Report Received')
                 .setColor(0x3498db)
                 .setDescription(
-                    `Thank you for reporting a bug! We appreciate your help in making things better.\n\n` +
-                    `You can check the status of your report at any time using \`/bug\` and entering your bug ID.`
+                    `Thank you for opening a thread! We appreciate your help in making things better.\n\n` +
+                    `You can check the status of your report at any time using \`/thread\` and entering your Custom Thread ID.`
                 )
                 .addFields(
-                    { name: '📋 Your Bug ID', value: `\`${bugId}\``, inline: true },
+                    { name: '📋 Your Custom Thread ID', value: `\`${bugId}\``, inline: true },
                     { name: '🔗 Your Report', value: `<#${fullThread.id}>`, inline: true },
                     { name: '📊 Current Status', value: `${STATUS_EMOJI['Open']} Open`, inline: true },
                 )

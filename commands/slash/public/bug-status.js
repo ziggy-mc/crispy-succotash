@@ -24,11 +24,11 @@ async function isStaff(interaction) {
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName('bug')
-        .setDescription('Check the status of a bug report.')
+        .setName('thread')
+        .setDescription('Check the status of a report.')
         .addStringOption(option =>
             option.setName('bug-id')
-                .setDescription('The bug ID (e.g. bug-xkz#4829)')
+                .setDescription('The Custom Thread ID (e.g. thread-xkz#4829)')
                 .setRequired(true)
                 .setAutocomplete(true)
         ),
@@ -80,12 +80,12 @@ module.exports = {
         }
 
         if (!bug) {
-            return interaction.editReply({ content: `❌ No bug found with ID \`${bugId}\`.` });
+            return interaction.editReply({ content: `❌ No thread found with ID \`${bugId}\`.` });
         }
 
         // Non-staff can only view their own bugs
         if (!staff && bug.reporterId !== interaction.user.id) {
-            return interaction.editReply({ content: `❌ You can only view your own bug reports.` });
+            return interaction.editReply({ content: `❌ You can only view your own reports.` });
         }
 
         const isCrossGuild = bug.guildId !== interaction.guildId;

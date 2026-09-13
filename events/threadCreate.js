@@ -7,7 +7,7 @@ const { premiumFooter } = require('../utils/bugQueue');
 const { onBugCreated } = require('../utils/bugStatsService');
 const { applyStatusTag } = require('../utils/bugForumTags');
 
-const STATUS_EMOJI = { 'Open': '🔴', 'In Progress': '🟡', 'Resolved': '🟢' };
+const STATUS_EMOJI = { 'Received': '🔴', 'In Progress': '🟡', 'Resolved': '🟢' };
 
 function randomLetters(n) {
     const chars = 'abcdefghijklmnopqrstuvwxyz';
@@ -106,7 +106,7 @@ module.exports = {
                 threadId: fullThread.id,
                 originalTitle,
                 reporterId: ownerId,
-                status: 'Open',
+                status: 'Received',
                 isQueued,
             });
 
@@ -142,7 +142,7 @@ module.exports = {
                 });
 
                 const queueEmbed = new EmbedBuilder()
-                    .setTitle('⏳ Bug Report Queued')
+                    .setTitle('⏳ Report Queued')
                     .setColor(0xf39c12)
                     .setDescription(
                         `You already have **${activeCount}** active report${activeCount !== 1 ? 's' : ''}. ` +
@@ -191,7 +191,7 @@ module.exports = {
             // ACTIVE BUG EMBED
             // ============================
             const threadEmbed = new EmbedBuilder()
-                .setTitle('🐛 Bug Report Received')
+                .setTitle('🐛 Report Received')
                 .setColor(0x3498db)
                 .setDescription(
                     `Thank you for opening a thread! We appreciate your help in making things better.\n\n` +
@@ -248,7 +248,7 @@ module.exports = {
             if (!reporter) return;
 
             const dmEmbed = new EmbedBuilder()
-                .setTitle('🐛 Bug Report Received')
+                .setTitle('🐛 Report Received')
                 .setColor(0x3498db)
                 .setDescription(
                     `Thank you for opening a thread! We appreciate your help in making things better.\n\n` +

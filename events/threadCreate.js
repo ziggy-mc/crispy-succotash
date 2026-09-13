@@ -22,7 +22,7 @@ async function generateUniqueBugId(guildId) {
     let id, exists;
 
     do {
-        id = `bug-${randomLetters(5)}#${randomNumbers(6)}`;
+        id = `thread-${randomLetters(5)}#${randomNumbers(6)}`;
         exists = await Bug.findOne({ guildId, bugId: id });
     } while (exists);
 

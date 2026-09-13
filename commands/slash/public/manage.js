@@ -56,7 +56,7 @@ function buildListEmbed(bugs, total, page, totalPages, filter) {
             : `${STATUS_EMOJI[filter] ?? '⏳'} ${filter}`;
 
     const embed = new EmbedBuilder()
-        .setTitle(`🐛 Bug List — ${filterLabel}`)
+        .setTitle(`🐛 Thread List — ${filterLabel}`)
         .setColor(0x3498db)
         .setFooter({
             text: `Page ${page}/${totalPages} • ${total} total`
@@ -65,7 +65,7 @@ function buildListEmbed(bugs, total, page, totalPages, filter) {
 
     if (bugs.length === 0) {
         embed.setDescription(
-            'No bugs found matching that filter.'
+            'No threads found matching that filter.'
         );
 
         return embed;
@@ -87,7 +87,7 @@ function buildListEmbed(bugs, total, page, totalPages, filter) {
 // ===================== BUG PANEL =====================
 function buildEmbed(bug) {
     return new EmbedBuilder()
-        .setTitle(`🛠️ Bug Panel — ${bug.bugId}`)
+        .setTitle(`🛠️ Report Panel — ${bug.bugId}`)
         .setColor(
             STATUS_COLOR[bug.status] ?? 0x3498db
         )
@@ -351,7 +351,7 @@ module.exports = {
         }
 
         // ===================== BUG PANEL =====================
-        if (sub === 'bug') {
+        if (sub === 'thread') {
             await interaction.deferReply({
                 ephemeral: true
             });

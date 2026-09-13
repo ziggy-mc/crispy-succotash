@@ -139,7 +139,7 @@ const statusRow = new ActionRowBuilder().addComponents(
 const deleteRow = new ActionRowBuilder().addComponents(
     new ButtonBuilder()
         .setCustomId('bug_delete')
-        .setLabel('Delete Bug')
+        .setLabel('Delete Thread')
         .setEmoji('🗑️')
         .setStyle(ButtonStyle.Danger)
 );

@@ -5,6 +5,7 @@ const Supporter = require('../Schemas.js/Supporter');
 const UserSettings = require('../Schemas.js/BugUserSettings'); // <-- ADDED
 const { premiumFooter } = require('../utils/bugQueue');
 const { onBugCreated } = require('../utils/bugStatsService');
+const { applyStatusTag } = require('../utils/bugForumTags');
 
 const STATUS_EMOJI = { 'Open': '🔴', 'In Progress': '🟡', 'Resolved': '🟢' };
 
@@ -19,16 +20,19 @@ function randomNumbers(n) {
 
 async function generateUniqueBugId(guildId) {
     let id, exists;
+
     do {
         id = `bug-${randomLetters(5)}#${randomNumbers(6)}`;
         exists = await Bug.findOne({ guildId, bugId: id });
     } while (exists);
+
     return id;
 }
 
 module.exports = {
     name: 'threadCreate',
     once: false,
+
     async execute(thread, newlyCreated) {
         console.log(`[DEBUG threadCreate] fired | id=${thread.id} | newlyCreated=${newlyCreated} | parentId=${thread.parentId}`);
 
@@ -38,10 +42,16 @@ module.exports = {
         const client = thread.client;
 
         try {
-            const guildConfig = await GuildConfig.findOne({ guildId: thread.guild.id });
+            const guildConfig = await GuildConfig.findOne({
+                guildId: thread.guild.id
+            });
+
             if (!guildConfig?.bugForumChannelId) return;
 
-            console.log(`[DEBUG threadCreate] parentId=${thread.parentId} | expected=${guildConfig.bugForumChannelId} | match=${thread.parentId === guildConfig.bugForumChannelId}`);
+            console.log(
+                `[DEBUG threadCreate] parentId=${thread.parentId} | expected=${guildConfig.bugForumChannelId} | match=${thread.parentId === guildConfig.bugForumChannelId}`
+            );
+
             if (thread.parentId !== guildConfig.bugForumChannelId) return;
 
             const fullThread = await thread.fetch().catch((err) => {
@@ -49,11 +59,17 @@ module.exports = {
                 return thread;
             });
 
-            const ownerId = fullThread.ownerId ?? fullThread.owner?.id ?? thread.ownerId;
+            const ownerId =
+                fullThread.ownerId ??
+                fullThread.owner?.id ??
+                thread.ownerId;
+
             console.log(`[DEBUG threadCreate] ownerId=${ownerId}`);
 
             if (!ownerId) {
-                client.logger.warn(`[BugTracker] Could not resolve ownerId for thread ${thread.id}`);
+                client.logger.warn(
+                    `[BugTracker] Could not resolve ownerId for thread ${thread.id}`
+                );
                 return;
             }
 
@@ -67,7 +83,10 @@ module.exports = {
             // ============================
             // SUPPORTER CHECK
             // ============================
-            const isSupporter = await Supporter.findOne({ userId: ownerId });
+            const isSupporter = await Supporter.findOne({
+                userId: ownerId
+            });
+
             const maxActive = isSupporter ? 5 : 2;
 
             const activeCount = await Bug.countDocuments({
@@ -80,8 +99,6 @@ module.exports = {
             const originalTitle = fullThread.name;
             const bugId = await generateUniqueBugId(thread.guild.id);
             const isQueued = activeCount >= maxActive;
-
-           
 
             const createdBug = await Bug.create({
                 guildId: thread.guild.id,
@@ -98,6 +115,21 @@ module.exports = {
             client.logger.info(
                 `[BugTracker] Registered ${bugId} → Thread ${fullThread.id} (Guild ${thread.guild.id})${isQueued ? ' [QUEUED]' : ''}`
             );
+
+            // ============================
+            // APPLY INITIAL DISCORD TAG
+            // ============================
+            try {
+                await applyStatusTag(
+                    fullThread,
+                    thread.guild.id,
+                    'Open'
+                );
+            } catch (tagErr) {
+                client.logger.warn(
+                    `[BugTracker] Failed to apply Received tag to ${bugId}: ${tagErr.message}`
+                );
+            }
 
             // ============================
             // QUEUED BUG LOGIC
@@ -128,8 +160,14 @@ module.exports = {
                 const queueFooter = premiumFooter(isSupporter);
                 if (queueFooter) queueEmbed.setFooter(queueFooter);
 
-                await fullThread.send({ embeds: [queueEmbed] }).catch(() => {});
-                await fullThread.setArchived(true, 'Bug report queued').catch(() => {});
+                await fullThread.send({
+                    embeds: [queueEmbed]
+                }).catch(() => {});
+
+                await fullThread.setArchived(
+                    true,
+                    'Bug report queued'
+                ).catch(() => {});
 
                 // ============================
                 // DM ONLY IF USER ENABLED IT
@@ -137,8 +175,13 @@ module.exports = {
                 if (userSettings.dmOnUpdate) {
                     try {
                         const reporter = await client.users.fetch(ownerId);
-                        await reporter.send({ embeds: [queueEmbed] });
-                    } catch { /* ignore */ }
+
+                        await reporter.send({
+                            embeds: [queueEmbed]
+                        });
+                    } catch {
+                        /* ignore */
+                    }
                 }
 
                 return;
@@ -167,37 +210,41 @@ module.exports = {
             if (activeFooter) threadEmbed.setFooter(activeFooter);
 
             // ============================
-// PING LOGIC (EXACT BEHAVIOR REQUESTED)
-// ============================
-// 1. If user enabled pings → ping user
-// 2. If staff role exists → ping staff
-// 3. If both apply → ping both
-// 4. If neither → ping nobody
+            // PING LOGIC (EXACT BEHAVIOR REQUESTED)
+            // ============================
+            // 1. If user enabled pings → ping user
+            // 2. If staff role exists → ping staff
+            // 3. If both apply → ping both
+            // 4. If neither → ping nobody
 
-let pingParts = [];
+            let pingParts = [];
 
-// User wants pings
-if (userSettings.pingOnUpdate) {
-    pingParts.push(`<@${ownerId}>`);
-}
+            // User wants pings
+            if (userSettings.pingOnUpdate) {
+                pingParts.push(`<@${ownerId}>`);
+            }
 
-// Staff role configured
-if (guildConfig.bugPingRoleId) {
-    pingParts.push(`<@&${guildConfig.bugPingRoleId}>`);
-}
+            // Staff role configured
+            if (guildConfig.bugPingRoleId) {
+                pingParts.push(`<@&${guildConfig.bugPingRoleId}>`);
+            }
 
-// If nothing was added → no ping
-const pingContent = pingParts.length > 0 ? pingParts.join(' ') : null;
+            // If nothing was added → no ping
+            const pingContent =
+                pingParts.length > 0
+                    ? pingParts.join(' ')
+                    : null;
 
-await fullThread.send({
-    content: pingContent ?? undefined,
-    embeds: [threadEmbed]
-}).catch(() => {});
+            await fullThread.send({
+                content: pingContent ?? undefined,
+                embeds: [threadEmbed]
+            }).catch(() => {});
 
             // ============================
             // DM CONFIRMATION (RESPECT SETTINGS)
             // ============================
             const reporter = await client.users.fetch(ownerId).catch(() => null);
+
             if (!reporter) return;
 
             const dmEmbed = new EmbedBuilder()
@@ -218,15 +265,25 @@ await fullThread.send({
 
             if (userSettings.dmOnUpdate) {
                 try {
-                    await reporter.send({ embeds: [dmEmbed] });
-                    client.logger.info(`[BugTracker] DM sent to ${reporter.tag} (${ownerId})`);
+                    await reporter.send({
+                        embeds: [dmEmbed]
+                    });
+
+                    client.logger.info(
+                        `[BugTracker] DM sent to ${reporter.tag} (${ownerId})`
+                    );
                 } catch (dmErr) {
-                    client.logger.warn(`[BugTracker] DM failed for ${ownerId}: ${dmErr.message}`);
+                    client.logger.warn(
+                        `[BugTracker] DM failed for ${ownerId}: ${dmErr.message}`
+                    );
                 }
             }
 
         } catch (err) {
-            client.logger.error(`[BugTracker] Failed to register bug: ${err.message}`, err);
+            client.logger.error(
+                `[BugTracker] Failed to register bug: ${err.message}`,
+                err
+            );
         }
     },
 };

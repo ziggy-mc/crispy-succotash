@@ -34,7 +34,7 @@ module.exports = {
                     const embed = new EmbedBuilder()
                         .setTitle('🗑️ Queued Bug Report Removed')
                         .setColor(0xe74c3c)
-                        .setDescription(`Your queued bug report \`${bug.bugId}\` has been removed.`)
+                        .setDescription(`Your queued report \`${bug.bugId}\` has been removed.`)
                         .addFields({ name: '📋 Title', value: bug.originalTitle, inline: false })
                         .setTimestamp();
 

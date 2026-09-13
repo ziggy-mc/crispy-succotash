@@ -148,10 +148,10 @@ const deleteRow = new ActionRowBuilder().addComponents(
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('manage')
-        .setDescription('Manage bugs')
+        .setDescription('Manage threads')
         .addSubcommand(sub =>
             sub.setName('list')
-                .setDescription('List bug reports')
+                .setDescription('List of reports')
                 .addStringOption(opt =>
                     opt.setName('filter')
                         .setDescription('Filter by status')
@@ -165,8 +165,8 @@ module.exports = {
                 )
         )
         .addSubcommand(sub =>
-            sub.setName('bug')
-                .setDescription('Manage a bug')
+            sub.setName('thread')
+                .setDescription('Manage a report')
                 .addStringOption(option =>
                     option.setName('bug-id')
                         .setDescription('The bug ID')
@@ -177,7 +177,7 @@ module.exports = {
 
     async autocomplete(interaction) {
         if (
-            interaction.options.getSubcommand() !== 'bug'
+            interaction.options.getSubcommand() !== 'thread'
         ) {
             return;
         }
@@ -367,7 +367,7 @@ module.exports = {
             if (!bug) {
                 return interaction.editReply({
                     content:
-                        `❌ No bug found with ID \`${bugId}\`.`
+                        `❌ No thread found with ID \`${bugId}\`.`
                 });
             }
 
@@ -476,12 +476,12 @@ module.exports = {
                             ) {
                                 await thread.setLocked(
                                     true,
-                                    'Bug resolved'
+                                    'Thread report resolved'
                                 );
                             } else {
                                 await thread.setLocked(
                                     false,
-                                    'Bug reopened / updated'
+                                    'Thread reopened / updated'
                                 );
                             }
 
@@ -493,7 +493,7 @@ module.exports = {
                                 embeds: [
                                     new EmbedBuilder()
                                         .setTitle(
-                                            '📊 Bug Status Updated'
+                                            '📊 Status Updated'
                                         )
                                         .setColor(
                                             STATUS_COLOR[newStatus] ??
@@ -585,13 +585,13 @@ module.exports = {
                         if (thread) {
                             await interaction.editReply({
                                 content:
-                                    `✅ Bug \`${bugId}\` deleted.`,
+                                    `✅ Thread \`${bugId}\` deleted.`,
                                 embeds: [],
                                 components: [],
                             });
 
                             await thread.delete(
-                                'Bug deleted via manage command'
+                                'Thread deleted via manage command'
                             );
                         }
                     } catch (err) {
@@ -602,7 +602,7 @@ module.exports = {
 
                         await interaction.editReply({
                             content:
-                                `:x: Bug \`${bugId}\` failed to delete.`,
+                                `:x: Thread \`${bugId}\` failed to delete.`,
                             embeds: [],
                             components: [],
                         });

@@ -11,35 +11,35 @@ module.exports = {
         .setDefaultMemberPermissions(PermissionFlagsBits.Administrator)
         .addSubcommand(sub =>
             sub.setName('forum')
-                .setDescription('Set the forum channel where bug threads are created.')
+                .setDescription('Set the forum channel where threads are created.')
                 .addChannelOption(opt =>
                     opt.setName('channel')
-                        .setDescription('The forum channel to watch for bug reports')
+                        .setDescription('The forum channel to watch for reports')
                         .addChannelTypes(ChannelType.GuildForum)
                         .setRequired(true)
                 )
         )
         .addSubcommand(sub =>
             sub.setName('staffrole')
-                .setDescription('Set the role that can manage bug reports.')
+                .setDescription('Set the role that can manage reports.')
                 .addRoleOption(opt =>
                     opt.setName('role')
-                        .setDescription('The staff role for bug management')
+                        .setDescription('The staff role for report management')
                         .setRequired(true)
                 )
         )
         .addSubcommand(sub =>
             sub.setName('pingrole')
-                .setDescription('Set a role to ping in the thread when a new bug is reported.')
+                .setDescription('Set a role to ping in the thread when a new thread is reported.')
                 .addRoleOption(opt =>
                     opt.setName('role')
-                        .setDescription('The role to ping on new bug reports (use @everyone to clear)')
+                        .setDescription('The role to ping on new reports (use @everyone to clear)')
                         .setRequired(true)
                 )
         )
         .addSubcommand(sub =>
             sub.setName('view')
-                .setDescription('View the current bug tracker configuration.')
+                .setDescription('View the current thread tracker configuration.')
         ),
 
     async execute(interaction) {
@@ -68,9 +68,9 @@ module.exports = {
                 return interaction.reply({
                     embeds: [
                         new EmbedBuilder()
-                            .setTitle('✅ Bug Tracker Configured')
+                            .setTitle('✅ Tracker Configured')
                             .setColor(0x2ecc71)
-                            .setDescription(`Bug reports will now be tracked in <#${channel.id}>.\n\nWhen someone creates a thread in that forum, the bot will automatically assign it a bug ID and notify the reporter via DM. (Requires premium to receive dm)`)
+                            .setDescription(`Reports will now be tracked in <#${channel.id}>.\n\nWhen someone creates a thread in that forum, the bot will automatically assign it a Custom Thread ID and notify the reporter via DM. (Requires premium to receive dm)`)
                             .setTimestamp(),
                     ],
                     ephemeral: true,
@@ -79,7 +79,7 @@ module.exports = {
                 console.error('[BugTracker] Failed to configure forum:', err);
 
                 return interaction.reply({
-                    content: '❌ I could not create or configure the bug tracker tags. Make sure I have permission to manage the forum channel.',
+                    content: '❌ I could not create or configure the tracker tags. Make sure I have permission to manage the forum channel.',
                     ephemeral: true,
                 });
             }
@@ -99,7 +99,7 @@ module.exports = {
                     new EmbedBuilder()
                         .setTitle('✅ Staff Role Set')
                         .setColor(0x2ecc71)
-                        .setDescription(`Members with <@&${role.id}> can now use \`/manage bug\` to manage bug reports.`)
+                        .setDescription(`Members with <@&${role.id}> can now use \`/manage thread\` to manage reports.`)
                         .setTimestamp(),
                 ],
                 ephemeral: true,
@@ -125,8 +125,8 @@ module.exports = {
                         .setColor(0x2ecc71)
                         .setDescription(
                             roleId
-                                ? `<@&${roleId}> will be pinged in the thread whenever a new bug report is submitted.`
-                                : `No role will be pinged on new bug reports.`
+                                ? `<@&${roleId}> will be pinged in the thread whenever a new report is submitted.`
+                                : `No role will be pinged on new reports.`
                         )
                         .setTimestamp(),
                 ],

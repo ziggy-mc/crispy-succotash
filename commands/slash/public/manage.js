@@ -168,8 +168,8 @@ module.exports = {
             sub.setName('thread')
                 .setDescription('Manage a report')
                 .addStringOption(option =>
-                    option.setName('bug-id')
-                        .setDescription('The bug ID')
+                    option.setName('thread-id')
+                        .setDescription('The Custom Thread ID')
                         .setRequired(true)
                         .setAutocomplete(true)
                 )
@@ -357,7 +357,7 @@ module.exports = {
             });
 
             const bugId =
-                interaction.options.getString('bug-id');
+                interaction.options.getString('thread-id');
 
             let bug = await Bug.findOne({
                 guildId: interaction.guildId,

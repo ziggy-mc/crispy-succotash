@@ -6,13 +6,13 @@ module.exports = {
     try {
       // Reply to the interaction
       await interaction.reply({
-        content: "Here is the link! https://bugs.ziggymc.me",
+        content: "Here is the link! https://mtr.evtrg.com",
         flags: 64,
       });
     } catch (error) {
       await interaction.reply({
         content: `An error has occured, ${error.message}
-                Please run this command again. If this issue persists, report it to the support server: https://bugs.ziggymc.me/support`,
+                Please run this command again. If this issue persists, report it to the support server: https://mtr.evtrg.com/support`,
         flags: 64,
       });
     }

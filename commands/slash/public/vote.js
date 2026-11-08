@@ -8,7 +8,7 @@ module.exports = {
     async execute(interaction) {
         try {
             await interaction.reply({
-                content: "Vote for the bot on [Devlyn Labs](https://bugs.ziggymc.me/vote).",
+                content: "Vote for the bot on [Devlyn Labs](https://mtr.evtrg.com/vote).",
                 flags: 64
             });
         } catch (error) {
@@ -16,12 +16,12 @@ module.exports = {
 
             if (interaction.replied || interaction.deferred) {
                 await interaction.followUp({
-                    content: `An error has occurred: ${error.message}\nPlease run this command again. If this issue persists, report it to the support server: https://bugs.ziggymc.me/support`,
+                    content: `An error has occurred: ${error.message}\nPlease run this command again. If this issue persists, report it to the support server: https://mtr.evtrg.com/support`,
                     flags: 64
                 });
             } else {
                 await interaction.reply({
-                    content: `An error has occurred: ${error.message}\nPlease run this command again. If this issue persists, report it to the support server: https://bugs.ziggymc.me/support`,
+                    content: `An error has occurred: ${error.message}\nPlease run this command again. If this issue persists, report it to the support server: https://mtr.evtrg.com/support`,
                     flags: 64
                 });
             }

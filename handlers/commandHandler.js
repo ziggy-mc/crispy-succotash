@@ -11,6 +11,7 @@ module.exports = async function loadCommands(client) {
   const localGlobal = [];
   const localDev = [];
   const syncedPrefix = [];
+  let loadingFailed = false;
 
   const sources = [
     { type: "slash", folder: "slash", useData: true },
@@ -42,7 +43,9 @@ module.exports = async function loadCommands(client) {
               if (useData) {
                 // Developer-only commands → dev guild only
                 if (cmd.settings?.isDeveloperOnly) {
-                  localDev.push(cmd.data.toJSON());
+                  const payload = cmd.data.toJSON();
+                  delete payload.contexts; delete payload.integration_types;
+                  localDev.push(payload);
                 } else {
                   // EVERYTHING ELSE → GLOBAL (user install + all guilds)
                   localGlobal.push(cmd.data.toJSON());
@@ -51,6 +54,7 @@ module.exports = async function loadCommands(client) {
                 syncedPrefix.push(name);
               }
             } catch (error) {
+              loadingFailed = true;
               client.logger.error(
                 `[CommandLoader] Failed to load ${file}: ${error.message}`,
                 error
@@ -59,6 +63,7 @@ module.exports = async function loadCommands(client) {
           })
         );
       } catch (error) {
+        loadingFailed = true;
         client.logger.error(
           `[CommandLoader] Failed to load ${folder} commands: ${error.message}`,
           error
@@ -66,6 +71,9 @@ module.exports = async function loadCommands(client) {
       }
     })
   );
+
+  if (loadingFailed) { client.logger.error("[CommandLoader] Registration skipped because a command could not load."); return; }
+  if (client.shard && client.shard.ids[0] !== 0) return;
 
   // ================= GLOBAL COMMAND SYNC =================
   try {

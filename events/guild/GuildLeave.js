@@ -2,7 +2,7 @@ const { EmbedBuilder } = require('discord.js');
 const { LogError } = require('../../utils/logger');
 
 module.exports = {
-    name: "GuildLeave",
+    name: "guildDelete",
     once: false,
     async execute(guild, client) {
         try {
@@ -21,7 +21,7 @@ module.exports = {
             }
             console.log(`Left guild ${guild.name} with ${guild.memberCount} members!`);
         } catch (error) {
-            LogError(error, client);
+            client.logger.error(error.message);
             console.log(error);
         }
     }

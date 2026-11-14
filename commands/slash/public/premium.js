@@ -85,7 +85,9 @@ module.exports = {
         )
     ),
 
+  cooldown: "10s",
   async execute(interaction) {
+    await interaction.deferReply({ flags: 64 });
     const userId = interaction.user.id;
     const duration = interaction.options.getInteger("duration");
 
@@ -132,7 +134,7 @@ module.exports = {
           message += "You can redeem Premium now.";
         }
 
-        return interaction.reply({
+        return interaction.editReply({
           content: message,
           ephemeral: true
         });
@@ -142,7 +144,7 @@ module.exports = {
        * Make sure the selected amount is valid.
        */
       if (!OPTIONS[duration]) {
-        return interaction.reply({
+        return interaction.editReply({
           content: "That Premium duration is invalid.",
           ephemeral: true
         });
@@ -156,7 +158,7 @@ module.exports = {
         );
 
         if (now < nextPurchase) {
-          return interaction.reply({
+          return interaction.editReply({
             content:
               `You have already redeemed Premium recently.\n` +
               `You can redeem Premium again <t:${unix(
@@ -170,7 +172,7 @@ module.exports = {
       const balance = await getCredits(userId);
 
       if (balance < duration) {
-        return interaction.reply({
+        return interaction.editReply({
           content:
             `You need **${duration} DL credits**, but you only have **${balance}**.`,
           ephemeral: true
@@ -206,7 +208,7 @@ module.exports = {
 
       
 
-      return interaction.reply({
+      return interaction.editReply({
         content:
           `✅ Premium activated for **${duration} day${
             duration === 1 ? "" : "s"
@@ -224,7 +226,7 @@ module.exports = {
 
 
       if (error.status === 402) {
-        return interaction.reply({
+        return interaction.editReply({
           content:
             error?.data?.error ||
             "You do not have enough DL credits.",
@@ -232,7 +234,7 @@ module.exports = {
         });
       }
 
-      return interaction.reply({
+      return interaction.editReply({
         content:
           "Something went wrong while purchasing Premium.",
         ephemeral: true

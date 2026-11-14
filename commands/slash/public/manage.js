@@ -1,3 +1,6 @@
+const { onCollect } = require('../../../utils/collectorSafety');
+const { hasStaffAccess, escapeRegex } = require('../../../utils/reportAccess');
+const { getPremiumEntitlement } = require('../../../utils/premiumEntitlement');
 const {
     SlashCommandBuilder, EmbedBuilder, PermissionFlagsBits,
     ActionRowBuilder, ButtonBuilder, ButtonStyle,
@@ -12,7 +15,7 @@ const { getUserSettings, onBugUpdated, onBugDeleted } = require('../../../utils/
 const { applyStatusTag } = require('../../../utils/bugForumTags');
 
 async function isPremium(userId) {
-    const user = await UserPremium.findOne({ userId });
+    const user = await getPremiumEntitlement(userId);
     return Boolean(user);
 }
 
@@ -29,22 +32,7 @@ const STATUS_EMOJI = {
     'Resolved': '🟢'
 };
 
-async function hasStaffAccess(interaction) {
-    const member = interaction.member;
 
-    if (member.permissions.has(PermissionFlagsBits.Administrator)) {
-        return true;
-    }
-
-    const guildConfig = await GuildConfig.findOne({
-        guildId: interaction.guildId
-    });
-
-    return !!(
-        guildConfig?.bugStaffRoleId &&
-        member.roles.cache.has(guildConfig.bugStaffRoleId)
-    );
-}
 
 // ===================== BUG LIST =====================
 const BUGS_PER_PAGE = 10;
@@ -76,7 +64,7 @@ function buildListEmbed(bugs, total, page, totalPages, filter) {
             ? '⏳ Queued'
             : `${STATUS_EMOJI[b.status]} ${b.status}`;
 
-        return `**\`${b.bugId}\`** — ${statusLabel}\n↳ <@${b.reporterId}> · <#${b.threadId}> · ${b.originalTitle}`;
+        return `**\`${b.bugId}\`** — ${statusLabel}\n↳ <@${b.reporterId}> · <#${b.threadId}> · ${b.originalTitle.slice(0, 120)}`;
     });
 
     embed.setDescription(lines.join('\n\n'));
@@ -176,6 +164,7 @@ module.exports = {
         ),
 
     async autocomplete(interaction) {
+        if (!await hasStaffAccess(interaction)) return interaction.respond([]);
         if (
             interaction.options.getSubcommand() !== 'thread'
         ) {
@@ -187,7 +176,7 @@ module.exports = {
         const bugs = await Bug.find({
             guildId: interaction.guildId,
             bugId: {
-                $regex: focused,
+                $regex: escapeRegex(focused),
                 $options: 'i'
             }
         }).limit(25);
@@ -302,7 +291,8 @@ module.exports = {
                     time: 5 * 60 * 1000
                 });
 
-            collector.on('collect', async i => {
+            collector.once('end', () => interaction.editReply({ components: [] }).catch(() => {}));
+            onCollect(collector, interaction, client, async i => {
                 if (
                     i.user.id !== interaction.user.id
                 ) {
@@ -314,6 +304,8 @@ module.exports = {
                 }
 
                 await i.deferUpdate();
+            if (!await hasStaffAccess(i)) { collector.stop('permissions'); return interaction.editReply({ content: 'Staff access has changed. Reopen the command after checking your roles.', embeds: [], components: [] }); }
+
 
                 if (
                     i.customId === 'buglist_prev' &&
@@ -388,7 +380,8 @@ module.exports = {
                     time: 5 * 60 * 1000
                 });
 
-            collector.on('collect', async i => {
+            collector.once('end', () => interaction.editReply({ components: [] }).catch(() => {}));
+            onCollect(collector, interaction, client, async i => {
                 if (
                     i.user.id !== interaction.user.id
                 ) {
@@ -400,11 +393,15 @@ module.exports = {
                 }
 
                 await i.deferUpdate();
+            if (!await hasStaffAccess(i)) { collector.stop('permissions'); return interaction.editReply({ content: 'Staff access has changed. Reopen the command after checking your roles.', embeds: [], components: [] }); }
+            bug = await Bug.findOne({ guildId: interaction.guildId, bugId });
+            if (!bug) { collector.stop('missing'); return interaction.editReply({ content: 'This report no longer exists.', embeds: [], components: [] }); }
 
                 if (
                     i.customId === 'bug_status_select'
                 ) {
                     const newStatus = i.values[0];
+                    if (!['Open', 'In Progress', 'Resolved'].includes(newStatus) || newStatus === bug.status) return;
 
                     const previousBug =
                         bug.toObject();
@@ -567,13 +564,9 @@ module.exports = {
                 if (
                     i.customId === 'bug_delete'
                 ) {
-                    await Bug.deleteOne({
-                        guildId:
-                            interaction.guildId,
-                        bugId
-                    });
-
-                    await onBugDeleted(bug);
+                    const removed = await Bug.findOneAndDelete({ guildId: interaction.guildId, bugId });
+                    if (!removed) return;
+                    await onBugDeleted(removed);
 
                     // ===== DELETE FORUM THREAD =====
                     try {

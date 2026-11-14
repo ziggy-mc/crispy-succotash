@@ -1,3 +1,5 @@
+const { withReportLock } = require('../utils/reportLock');
+const { getPremiumEntitlement } = require('../utils/premiumEntitlement');
 const { EmbedBuilder } = require('discord.js');
 const Bug = require('../Schemas.js/cBug');
 const GuildConfig = require('../Schemas.js/guildConfig');
@@ -34,7 +36,7 @@ module.exports = {
     once: false,
 
     async execute(thread, newlyCreated) {
-        console.log(`[DEBUG threadCreate] fired | id=${thread.id} | newlyCreated=${newlyCreated} | parentId=${thread.parentId}`);
+        return withReportLock(`${thread.guild.id}:${thread.ownerId || 'unknown'}`, async () => {
 
         const ageMs = Date.now() - thread.createdTimestamp;
         if (!newlyCreated && ageMs > 30_000) return;
@@ -48,9 +50,7 @@ module.exports = {
 
             if (!guildConfig?.bugForumChannelId) return;
 
-            console.log(
-                `[DEBUG threadCreate] parentId=${thread.parentId} | expected=${guildConfig.bugForumChannelId} | match=${thread.parentId === guildConfig.bugForumChannelId}`
-            );
+
 
             if (thread.parentId !== guildConfig.bugForumChannelId) return;
 
@@ -59,13 +59,14 @@ module.exports = {
                 return thread;
             });
 
+            if (await Bug.exists({ threadId: fullThread.id })) return;
+
             const ownerId =
                 fullThread.ownerId ??
                 fullThread.owner?.id ??
                 thread.ownerId;
 
-            console.log(`[DEBUG threadCreate] ownerId=${ownerId}`);
-
+    
             if (!ownerId) {
                 client.logger.warn(
                     `[BugTracker] Could not resolve ownerId for thread ${thread.id}`
@@ -83,9 +84,7 @@ module.exports = {
             // ============================
             // SUPPORTER CHECK
             // ============================
-            const isSupporter = await Supporter.findOne({
-                userId: ownerId
-            });
+            const isSupporter = await getPremiumEntitlement(ownerId);
 
             const maxActive = isSupporter ? 5 : 2;
 
@@ -186,7 +185,7 @@ try {
                 // ============================
                 // DM ONLY IF USER ENABLED IT
                 // ============================
-                if (userSettings.dmOnUpdate) {
+                if (isSupporter && userSettings.dmOnUpdate) {
                     try {
                         const reporter = await client.users.fetch(ownerId);
 
@@ -277,7 +276,7 @@ try {
 
             if (activeFooter) dmEmbed.setFooter(activeFooter);
 
-            if (userSettings.dmOnUpdate) {
+            if (isSupporter && userSettings.dmOnUpdate) {
                 try {
                     await reporter.send({
                         embeds: [dmEmbed]
@@ -299,5 +298,6 @@ try {
                 err
             );
         }
+        });
     },
 };

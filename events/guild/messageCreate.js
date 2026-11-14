@@ -21,13 +21,12 @@ module.exports = {
   async execute(message) {
     if (!message.guild || message.author.bot) return;
 
-    const cfg = await GuildConfig.findOne({ guildId: message.guild.id });
-    if (!cfg?.pingTracking) return;
-
     const users = message.mentions.users.size;
     const roles = message.mentions.roles.size;
     const everyone = message.mentions.everyone ? 1 : 0;
     if (users + roles + everyone === 0) return;
+    const cfg = await GuildConfig.findOne({ guildId: message.guild.id }).lean();
+    if (!cfg?.pingTracking) return;
 
     const now = new Date();
 

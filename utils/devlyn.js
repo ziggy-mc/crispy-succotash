@@ -11,6 +11,7 @@ async function getCredits(discordId) {
     `${BASE_URL}/credits/${discordId}`,
     {
       method: "GET",
+      signal: AbortSignal.timeout(10000),
       headers: {
         Authorization: `Bearer ${key}`
       }
@@ -48,6 +49,7 @@ async function deductCredits(discordId, amount, reason) {
     `${BASE_URL}/credits/deduct`,
     {
       method: "POST",
+      signal: AbortSignal.timeout(10000),
       headers: {
         Authorization: `Bearer ${key}`,
         "Content-Type": "application/json"

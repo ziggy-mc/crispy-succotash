@@ -1,0 +1,50 @@
+
+> bot-base@1.0.0 test
+> node --test test/*.test.js
+
+✔ free owner across installed readable servers (1.195669ms)
+✔ free DM denied (0.154939ms)
+✔ free user install without bot denied (0.104635ms)
+✔ removed source denied (0.14183ms)
+✔ restricted source denied (0.131284ms)
+✔ premium owner DM allowed (0.110553ms)
+✔ premium cannot read another owner (0.097134ms)
+✔ destination staff cannot read source private report (0.122261ms)
+✔ source staff may read source report (0.185655ms)
+✔ actual Discord integration owners object must authorize this guild (0.388705ms)
+✔ source reader checks membership, ViewChannel, private thread membership and availability (0.802237ms)
+✔ members cached for one request only; permission revocation affects next request (0.297861ms)
+✔ visible reports never inherit staff authority from another guild (1.077203ms)
+✔ autocomplete input is a literal bounded regular expression (0.212214ms)
+✔ every private route rejects missing and invalid service tokens (53.708685ms)
+✔ health distinguishes reachable API from disconnected database (10.769665ms)
+✔ client premium flag cannot grant global account access (4.797599ms)
+✔ notification endpoint enforces entitlement and validates input (16.469798ms)
+✔ settings upsert has no conflicting Mongo paths and preserves free ping setting (3.813132ms)
+✔ premium dashboard owns its query and includes source server, real queued status and counters (4.313061ms)
+✔ command definitions and component modules load and serialize without starting services (26.002213ms)
+✔ free owner retrieves a readable report from another installed server with a source name (2.499969ms)
+✔ free DM and user-installed context deny before looking up any report (0.702459ms)
+✔ staff list pagination remains functional and revalidates staff access (42.388848ms)
+✔ free account (1.149421ms)
+✔ manual supporter (0.140438ms)
+✔ active redemption without supporter row (0.174318ms)
+✔ expired redemption (0.106177ms)
+✔ manual supporter survives expired redemption (0.233976ms)
+✔ expiry maintenance never deletes an independent manual grant or cooldown history (0.179165ms)
+✔ same reporter slot decisions serialize and a failed decision releases the lock (6.462704ms)
+✔ maintenance does not overlap and shutdown clears repeaters (6.120607ms)
+✔ commands without cooldowns retain no user keys; blocked commands return a boolean (0.535883ms)
+ℹ tests 33
+ℹ suites 0
+ℹ pass 33
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2419.364462
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.2
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.2
+npm notice To update run: npm install -g npm@12.2.2
+npm notice

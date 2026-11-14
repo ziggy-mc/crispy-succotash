@@ -1,3 +1,4 @@
+const { getPremiumEntitlement } = require('./premiumEntitlement');
 const {
     EmbedBuilder,
     ActionRowBuilder,
@@ -31,7 +32,7 @@ function parseBugButtonCustomId(customId) {
 async function sendReopenDM(user, bugData) {
     if (!user || !bugData) return false;
 
-    const supporter = await Supporter.findOne({ userId: user.id });
+    const supporter = await getPremiumEntitlement(user.id);
     if (!supporter) return false;
 
     const embed = new EmbedBuilder()
@@ -76,7 +77,7 @@ async function handleReopenRequest(interaction) {
 
     const { guildId, bugId } = parsed;
 
-    const isSupporter = await Supporter.findOne({ userId: interaction.user.id });
+    const isSupporter = await getPremiumEntitlement(interaction.user.id);
     if (!isSupporter) {
         return interaction.editReply({ content: '❌ This reopen option is only available to premium supporters.' });
     }

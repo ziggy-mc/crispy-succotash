@@ -13,13 +13,12 @@ module.exports = {
             if (!guildConfig?.bugForumChannelId) return;
             if (thread.parentId !== guildConfig.bugForumChannelId) return;
 
-            const bug = await Bug.findOne({ threadId: thread.id });
+            const bug = await Bug.findOneAndDelete({ threadId: thread.id });
             if (!bug) return;
 
             const { reporterId, guildId } = bug;
 
             // Remove the bug record
-            await Bug.deleteOne({ threadId: thread.id });
             await onBugDeleted(bug);
 
             // Only DM / promote queue if the bug was active (not already handled by the panel)
@@ -27,19 +26,7 @@ module.exports = {
                 await dmReporterUpdate(client, reporterId, bug, 'deleted');
                 await promoteQueuedBug(client, guildId, reporterId);
             } else {
-                // Queued bug thread was deleted — just remove it, no promotion needed (nothing opened up)
-                try {
-                    const reporter = await client.users.fetch(reporterId);
-                    const { EmbedBuilder } = require('discord.js');
-                    const embed = new EmbedBuilder()
-                        .setTitle('🗑️ Queued Bug Report Removed')
-                        .setColor(0xe74c3c)
-                        .setDescription(`Your queued report \`${bug.bugId}\` has been removed.`)
-                        .addFields({ name: '📋 Title', value: bug.originalTitle, inline: false })
-                        .setTimestamp();
-
-                    await reporter.send({ embeds: [embed] });
-                } catch { /* DMs may be closed */ }
+                await dmReporterUpdate(client, reporterId, bug, 'deleted');
             }
         } catch (err) {
             client.logger?.error?.(`[BugTracker] threadDelete error: ${err.message}`, err);

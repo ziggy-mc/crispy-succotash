@@ -1,3 +1,6 @@
+const { getUserSettings, onBugUpdated } = require('../../utils/bugStatsService');
+const { hasStaffAccess } = require('../../utils/reportAccess');
+const { getPremiumEntitlement } = require('../../utils/premiumEntitlement');
 const { EmbedBuilder, PermissionFlagsBits } = require('discord.js');
 const Bug = require('../../Schemas.js/cBug');
 const GuildConfig = require('../../Schemas.js/guildConfig');
@@ -8,31 +11,7 @@ const { applyStatusTag } = require('../../utils/bugForumTags');
 
 const REOPEN_WINDOW_MS = 24 * 60 * 60 * 1000;
 
-async function hasStaffAccess(interaction) {
-    if (
-        interaction.member.permissions.has(
-            PermissionFlagsBits.Administrator
-        )
-    ) {
-        return true;
-    }
 
-    const guildConfig =
-        await GuildConfig.findOne({
-            guildId: interaction.guildId
-        });
-
-    if (
-        guildConfig?.bugStaffRoleId &&
-        interaction.member.roles.cache.has(
-            guildConfig.bugStaffRoleId
-        )
-    ) {
-        return true;
-    }
-
-    return false;
-}
 
 module.exports = {
     customId: 'bug_confirm_reopen', // matched by prefix in componentCreate
@@ -47,7 +26,7 @@ module.exports = {
         const guildId = parts[1];
         const bugId = parts[2];
 
-        if (!await hasStaffAccess(interaction)) {
+        if (guildId !== interaction.guildId || !await hasStaffAccess(interaction)) {
             return interaction.editReply({
                 content:
                     '❌ You need staff or admin permissions to approve reopen requests.'
@@ -75,9 +54,7 @@ module.exports = {
 
         // Reporter must still be a supporter
         const isSupporter =
-            await Supporter.findOne({
-                userId: bug.reporterId
-            });
+            await getPremiumEntitlement(bug.reporterId);
 
         if (!isSupporter) {
             return interaction.editReply({
@@ -98,15 +75,15 @@ module.exports = {
             });
         }
 
+        const previousBug = bug.toObject();
         // Reopen the bug
         bug.status = 'Open';
         bug.resolvedAt = null;
 
         await bug.save();
+        await onBugUpdated(previousBug, bug);
 
-        pendingReopens.delete(
-            bugId
-        );
+        pendingReopens.delete(`${guildId}:${bugId}`);
 
         // Remove buttons from the reopen-request message
         try {
@@ -202,6 +179,7 @@ module.exports = {
 
         // DM the reporter
         try {
+            if (!(await getUserSettings(bug.reporterId))?.dmOnUpdate) return interaction.editReply({ content: "Reopen approved." });
             const reporter =
                 await client.users.fetch(
                     bug.reporterId

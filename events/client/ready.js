@@ -4,15 +4,18 @@ const {
   setClient,
   startHeartbeat,
   seedSystems,
+  stopHeartbeat,
 } = require("../../utils/systemMonitor");
 
 const DEVLYN_API = "https://devlynlabs.com/api/v1/bot/status";
 const DEVLYN_KEY = process.env.DEVLYN_API_KEY;
 
 async function updateDevlynStatus(client) {
+  if (!DEVLYN_KEY) return;
   try {
     const res = await fetch(DEVLYN_API, {
       method: "POST",
+      signal: AbortSignal.timeout(10000),
       headers: {
         Authorization: `Bearer ${DEVLYN_KEY}`,
         "Content-Type": "application/json",
@@ -55,16 +58,17 @@ module.exports = {
     };
 
     updateStatus();
-    setInterval(updateStatus, 60 * 1000);
+
 
     // 🔥 initial push on ready
     await updateDevlynStatus(client);
 
     // 🔁 heartbeat to Devlyn API every 5 minutes
-    setInterval(() => updateDevlynStatus(client), 60 * 1000);
+    client.repeat(() => updateDevlynStatus(client), 5 * 60 * 1000);
 
     setClient(client);
     startHeartbeat();
+    client.addCleanup(stopHeartbeat);
 
     seedSystems(client).catch((err) =>
       client.logger.error("[SystemMonitor] seedSystems failed:", err)

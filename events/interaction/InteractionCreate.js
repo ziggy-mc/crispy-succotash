@@ -10,10 +10,12 @@ module.exports = {
     if (interaction.isAutocomplete()) {
       const command = client.commands.slash.get(interaction.commandName);
       if (command?.autocomplete) {
+        if (command.settings?.isDeveloperOnly && !client.config.developers.includes(interaction.user.id)) return interaction.respond([]);
         try {
           await command.autocomplete(interaction, client);
         } catch (err) {
-          console.error("Autocomplete error:", err);
+          client.logger.warn("Autocomplete failed");
+          if (!interaction.responded) await interaction.respond([]).catch(() => {});
         }
       }
       return; // stop here so it doesn't fall through
@@ -41,9 +43,9 @@ module.exports = {
       );
 
       if (interaction.replied || interaction.deferred)
-        interaction.followUp({ content: "There was an error while executing this command!", flags: 64 });
+        await interaction.editReply({ content: "There was an error while executing this command!", flags: 64 });
       else
-        interaction.reply({ content: "There was an error while executing this command!", flags: 64 });
+        await interaction.reply({ content: "There was an error while executing this command!", flags: 64 });
     }
   },
 };

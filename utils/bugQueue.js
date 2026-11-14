@@ -1,3 +1,6 @@
+const { withReportLock } = require('./reportLock');
+const { premiumUserIds } = require('./premiumEntitlement');
+const { getPremiumEntitlement } = require('./premiumEntitlement');
 const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
 const Bug = require('../Schemas.js/cBug');
 const Supporter = require('../Schemas.js/Supporter');
@@ -21,21 +24,17 @@ function premiumFooter(supporter) {
  * Silently ignores DM failures.
  */
 async function dmReporterUpdate(client, reporterId, bug, event) {
-    let reporter;
-    try {
-        reporter = await client.users.fetch(reporterId);
-    } catch {
-        return;
-    }
 
     // Fetch supporter doc once — used for footer and reopen button
-    const supporter = await Supporter.findOne({ userId: reporterId });
+    const supporter = await getPremiumEntitlement(reporterId);
     const settings = await getUserSettings(reporterId);
 
     if (!supporter || !settings?.dmOnUpdate) {
         return;
     }
 
+    const reporter = await client.users.fetch(reporterId).catch(() => null);
+    if (!reporter) return;
     const footer    = premiumFooter(supporter);
 
     let embed;
@@ -100,7 +99,10 @@ async function dmReporterUpdate(client, reporterId, bug, event) {
  * Promotes the oldest queued bug for a user in a guild to active.
  * Unarchives the thread, sends a message in it, and DMs the reporter.
  */
-async function promoteQueuedBug(client, guildId, reporterId) {
+async function promoteQueuedBugUnlocked(client, guildId, reporterId) {
+    const premium = !!await getPremiumEntitlement(reporterId);
+    const active = await Bug.countDocuments({ guildId, reporterId, isQueued: false, status: { $nin: ['Resolved', 'Reopen Request'] } });
+    if (active >= (premium ? 5 : 2)) return;
     const queued = await Bug.findOne(
         { guildId, reporterId, isQueued: true },
         null,
@@ -138,15 +140,16 @@ async function promoteQueuedBug(client, guildId, reporterId) {
 
     // DM the reporter
     try {
+        if (!premium || !(await getUserSettings(reporterId))?.dmOnUpdate) return;
         const reporter  = await client.users.fetch(reporterId);
-        const supporter = await Supporter.findOne({ userId: reporterId });
-        const footer    = premiumFooter(supporter);
+        const supporter = await getPremiumEntitlement(reporterId);
+        const footer = premiumFooter(supporter);
         const dmEmbed = new EmbedBuilder()
             .setTitle('✅ Your Queued Report Is Now Active')
             .setColor(0x2ecc71)
             .setDescription(
                 `Your queued report has a slot and is now being tracked!\n\n` +
-                `You can check its status with \`/bug\`.`
+                `You can check its status with \`/thread\`.`
             )
             .addFields(
                 { name: '📋 Custom Thread ID',   value: `\`${queued.bugId}\``,       inline: true },
@@ -159,6 +162,10 @@ async function promoteQueuedBug(client, guildId, reporterId) {
 
         await reporter.send({ embeds: [dmEmbed] });
     } catch { /* DMs may be closed */ }
+}
+
+async function promoteQueuedBug(client, guildId, reporterId) {
+    return withReportLock(`${guildId}:${reporterId}`, () => promoteQueuedBugUnlocked(client, guildId, reporterId));
 }
 
 /**
@@ -178,8 +185,7 @@ async function promoteNextInGuild(client, guildId) {
     }
 
     const reporterIds = Object.keys(perReporter);
-    const supporters  = await Supporter.find({ userId: { $in: reporterIds } });
-    const premiumSet  = new Set(supporters.map(s => s.userId));
+    const premiumSet = await premiumUserIds(reporterIds);
 
     // Sort: premium users first, then by oldest queued bug
     reporterIds.sort((a, b) => {
@@ -191,7 +197,7 @@ async function promoteNextInGuild(client, guildId) {
     });
 
     for (const reporterId of reporterIds) {
-        const maxActive  = premiumSet.has(reporterId) ? 3 : 1;
+        const maxActive  = premiumSet.has(reporterId) ? 5 : 2;
         const active     = await Bug.countDocuments({
             guildId, reporterId, isQueued: false, status: { $ne: 'Resolved' },
         });

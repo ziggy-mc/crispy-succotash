@@ -1,3 +1,4 @@
+const { getPremiumEntitlement } = require('./premiumEntitlement');
 const Bug = require('../Schemas.js/cBug');
 const Supporter = require('../Schemas.js/Supporter');
 const BugUserSettings = require('../Schemas.js/BugUserSettings');
@@ -10,8 +11,9 @@ const GLOBAL_KEY = 'global';
 const DASHBOARD_REFRESH_MS = 2 * 60 * 1000;
 
 function contributionFromBug(bug) {
+    if (!bug) return { open: 0, queued: 0, resolved: 0 };
     const isQueued = Boolean(bug?.isQueued);
-    const isResolved = bug?.status === 'Resolved';
+    const isResolved = bug?.status === 'Resolved' || bug?.status === 'Reopen Request';
 
     return {
         open: !isQueued && !isResolved ? 1 : 0,
@@ -46,7 +48,7 @@ async function getUserSettings(userId) {
 }
 
 async function updateUserSettings(userId, updates = {}) {
-    const supporter = await Supporter.findOne({ userId });
+    const supporter = await getPremiumEntitlement(userId);
     const isPremium = Boolean(supporter);
 
     const $set = { updatedAt: new Date() };
@@ -60,7 +62,7 @@ async function updateUserSettings(userId, updates = {}) {
 
     const settings = await BugUserSettings.findOneAndUpdate(
         { userId },
-        { $set, $setOnInsert: { pingOnUpdate: true, dmOnUpdate: false } },
+        { $set, $setOnInsert: { ...(!('pingOnUpdate' in $set) ? { pingOnUpdate: true } : {}), ...(!('dmOnUpdate' in $set) ? { dmOnUpdate: false } : {}) } },
         { upsert: true, new: true }
     );
 
@@ -70,7 +72,7 @@ async function updateUserSettings(userId, updates = {}) {
         await settings.save();
     }
 
-    await refreshUserDashboardCache(userId);
+    await BugUserDashboardCache.deleteOne({ userId });
     return settings;
 }
 
@@ -112,7 +114,7 @@ async function onBugCreated(bug) {
 
     const delta = contributionFromBug(bug);
     await applyDelta({ userId: bug.reporterId, guildId: bug.guildId, delta, totalCreatedDelta: 1 });
-    await refreshUserDashboardCache(bug.reporterId);
+    await BugUserDashboardCache.deleteOne({ userId: bug.reporterId });
 }
 
 async function onBugUpdated(beforeBug, afterBug) {
@@ -121,12 +123,12 @@ async function onBugUpdated(beforeBug, afterBug) {
 
     const delta = deltaFromBugs(beforeBug, afterBug);
     if (!delta.open && !delta.queued && !delta.resolved) {
-        await refreshUserDashboardCache(afterBug.reporterId);
+        await BugUserDashboardCache.deleteOne({ userId: afterBug.reporterId });
         return;
     }
 
     await applyDelta({ userId: afterBug.reporterId, guildId: afterBug.guildId, delta });
-    await refreshUserDashboardCache(afterBug.reporterId);
+    await BugUserDashboardCache.deleteOne({ userId: afterBug.reporterId });
 }
 
 async function onBugDeleted(bug) {
@@ -140,7 +142,7 @@ async function onBugDeleted(bug) {
     };
 
     await applyDelta({ userId: bug.reporterId, guildId: bug.guildId, delta });
-    await refreshUserDashboardCache(bug.reporterId);
+    await BugUserDashboardCache.deleteOne({ userId: bug.reporterId });
 }
 
 function buildThreadLink(guildId, threadId) {
@@ -149,13 +151,13 @@ function buildThreadLink(guildId, threadId) {
 }
 
 async function getSubscriptionTier(userId) {
-    const supporter = await Supporter.findOne({ userId });
+    const supporter = await getPremiumEntitlement(userId);
     return supporter ? 'premium' : 'free';
 }
 
 async function buildUserDashboardData(userId) {
     const [bugs, tier, settings, userStats] = await Promise.all([
-        Bug.find({ reporterId: userId }).sort({ createdAt: -1 }),
+        Bug.find({ reporterId: userId }).sort({ createdAt: -1 }).limit(200).lean(),
         getSubscriptionTier(userId),
         ensureUserSettings(userId),
         BugUserStats.findOne({ userId }),
@@ -231,7 +233,7 @@ async function refreshAllDashboardCaches() {
 
 async function reconcileCurrentState() {
     const [bugs, userStats, guildStats, global] = await Promise.all([
-        Bug.find({}, { reporterId: 1, guildId: 1, status: 1, isQueued: 1 }),
+        Bug.find({}, { reporterId: 1, guildId: 1, status: 1, isQueued: 1 }).lean(),
         BugUserStats.find({}),
         BugGuildStats.find({}),
         BugGlobalStats.findOne({ key: GLOBAL_KEY }),

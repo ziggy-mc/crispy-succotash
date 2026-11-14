@@ -1,3 +1,6 @@
+const { onBugUpdated, onBugDeleted } = require('../../../utils/bugStatsService');
+const { onCollect } = require('../../../utils/collectorSafety');
+const { hasStaffAccess, escapeRegex } = require('../../../utils/reportAccess');
 const {
     SlashCommandBuilder, EmbedBuilder,
     ActionRowBuilder, ButtonBuilder, ButtonStyle,
@@ -47,15 +50,7 @@ const deleteRow = new ActionRowBuilder().addComponents(
         .setStyle(ButtonStyle.Danger)
 );
 
-async function hasStaffAccess(interaction) {
-    const member = interaction.member;
-    if (member.permissions.has(PermissionFlagsBits.Administrator)) return true;
 
-    const guildConfig = await GuildConfig.findOne({ guildId: interaction.guildId });
-    if (guildConfig?.bugStaffRoleId && member.roles.cache.has(guildConfig.bugStaffRoleId)) return true;
-
-    return false;
-}
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -69,10 +64,11 @@ module.exports = {
         ),
 
     async autocomplete(interaction) {
+        if (!await hasStaffAccess(interaction)) return interaction.respond([]);
         const focused = interaction.options.getFocused();
         const bugs = await Bug.find({
             guildId: interaction.guildId,
-            bugId: { $regex: focused, $options: 'i' }
+            bugId: { $regex: escapeRegex(focused), $options: 'i' }
         }).limit(25);
 
         await interaction.respond(
@@ -106,22 +102,30 @@ module.exports = {
         const msg = await interaction.fetchReply();
         const collector = msg.createMessageComponentCollector({ time: 5 * 60 * 1000 });
 
-        collector.on('collect', async i => {
+        onCollect(collector, interaction, client, async i => {
             if (i.user.id !== interaction.user.id) {
                 return i.reply({ content: '❌ Only the person who opened this panel can use it.', ephemeral: true });
             }
 
             await i.deferUpdate();
+            if (!await hasStaffAccess(i)) { collector.stop('permissions'); return interaction.editReply({ content: 'Staff access has changed. Reopen the command after checking your roles.', embeds: [], components: [] }); }
+            bug = await Bug.findOne({ guildId: interaction.guildId, bugId });
+            if (!bug) { collector.stop('missing'); return interaction.editReply({ content: 'This report no longer exists.', embeds: [], components: [] }); }
 
             // ── Status change ──
             if (i.customId === 'bug_status_select') {
                 const newStatus = i.values[0];
+                    if (!['Open', 'In Progress', 'Resolved'].includes(newStatus) || newStatus === bug.status) return;
                 const update    = {
                     status:     newStatus,
                     resolvedAt: newStatus === 'Resolved' ? new Date() : null,
                 };
 
+                const previousBug = bug.toObject();
                 bug = await Bug.findOneAndUpdate({ guildId: interaction.guildId, bugId }, update, { new: true });
+
+                if (!bug) return;
+                await onBugUpdated(previousBug, bug);
 
                 // Post a status-update message in the bug thread
                 try {
@@ -171,7 +175,9 @@ module.exports = {
                 const reporterId = bug.reporterId;
                 const guildId    = interaction.guildId;
 
-                await Bug.deleteOne({ guildId, bugId });
+                const removed = await Bug.findOneAndDelete({ guildId, bugId });
+                if (!removed) return;
+                await onBugDeleted(removed);
 
                 // DM reporter that the bug was deleted
                 await dmReporterUpdate(client, reporterId, bug, 'deleted');

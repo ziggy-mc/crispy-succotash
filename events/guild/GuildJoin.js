@@ -2,7 +2,7 @@ const { EmbedBuilder } = require('discord.js');
 const { LogError } = require('../../utils/logger');
 
 module.exports = {
-    name: "GuildJoin",
+    name: "guildCreate",
     once: false,
     async execute(guild, client) {  
         try {
@@ -21,7 +21,7 @@ module.exports = {
                 channel.send({ embeds: [embed] });
             }
         } catch (error) {
-            LogError(error, client);
+            client.logger.error(error.message);
             console.log(error);
         }
     }

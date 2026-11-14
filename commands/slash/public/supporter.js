@@ -1,3 +1,4 @@
+const { getPremiumEntitlement } = require('../../../utils/premiumEntitlement');
 const {
     SlashCommandBuilder,
     EmbedBuilder
@@ -21,9 +22,7 @@ module.exports = {
         const user = interaction.options.getUser('user');
 
         try {
-            const supporter = await Supporter.findOne({
-                userId: user.id
-            });
+            const supporter = await getPremiumEntitlement(user.id);
 
             if (!supporter) {
                 return interaction.reply({
@@ -49,17 +48,17 @@ module.exports = {
                     },
                     {
                         name: 'Username',
-                        value: supporter.username,
+                        value: supporter.username || user.username,
                         inline: true
                     },
                     {
                         name: 'Role ID',
-                        value: supporter.roleId,
+                        value: supporter.roleId || 'Credit redemption',
                         inline: true
                     },
                     {
                         name: 'Role Name',
-                        value: supporter.roleName,
+                        value: supporter.roleName || 'Premium',
                         inline: true
                     },
                     {

@@ -1,3 +1,5 @@
+const { onCollect } = require('../../../utils/collectorSafety');
+const { hasStaffAccess, escapeRegex } = require('../../../utils/reportAccess');
 const {
     SlashCommandBuilder, EmbedBuilder, PermissionFlagsBits,
 } = require('discord.js');
@@ -8,12 +10,7 @@ const STATUS_EMOJI = { 'Open': '🔴', 'In Progress': '🟡', 'Resolved': '🟢'
 const BUGS_PER_PAGE    = 10;
 const COLLECTOR_TIMEOUT = 5 * 60 * 1000;
 
-async function hasStaffAccess(interaction) {
-    const member = interaction.member;
-    if (member.permissions.has(PermissionFlagsBits.Administrator)) return true;
-    const guildConfig = await GuildConfig.findOne({ guildId: interaction.guildId });
-    return !!(guildConfig?.bugStaffRoleId && member.roles.cache.has(guildConfig.bugStaffRoleId));
-}
+
 
 function buildListEmbed(bugs, total, page, totalPages, filter) {
     const filterLabel = filter === 'all' ? 'All' : `${STATUS_EMOJI[filter] ?? '⏳'} ${filter}`;
@@ -31,7 +28,7 @@ function buildListEmbed(bugs, total, page, totalPages, filter) {
 
     const lines = bugs.map(b => {
         const statusLabel = b.isQueued ? '⏳ Queued' : `${STATUS_EMOJI[b.status]} ${b.status}`;
-        return `**\`${b.bugId}\`** — ${statusLabel}\n↳ <@${b.reporterId}> · <#${b.threadId}> · ${b.originalTitle}`;
+        return `**\`${b.bugId}\`** — ${statusLabel}\n↳ <@${b.reporterId}> · <#${b.threadId}> · ${b.originalTitle.slice(0, 120)}`;
     });
 
     embed.setDescription(lines.join('\n\n'));
@@ -127,12 +124,13 @@ settings: {isDeveloperOnly: true },
         const msg       = await interaction.fetchReply();
         const collector = msg.createMessageComponentCollector({ time: 5 * 60 * 1000 });
 
-        collector.on('collect', async i => {
+        onCollect(collector, interaction, client, async i => {
             if (i.user.id !== interaction.user.id) {
                 return i.reply({ content: '❌ Only the person who opened this list can page through it.', ephemeral: true });
             }
 
             await i.deferUpdate();
+            if (!await hasStaffAccess(i)) { collector.stop('permissions'); return interaction.editReply({ content: 'Staff access has changed. Reopen the command after checking your roles.', embeds: [], components: [] }); }
 
             if (i.customId === 'buglist_prev' && page > 1) page--;
             if (i.customId === 'buglist_next' && page < totalPages) page++;

@@ -1,3 +1,4 @@
+const { getPremiumEntitlement } = require('../../utils/premiumEntitlement');
 const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
 const Bug = require('../../Schemas.js/cBug');
 const Supporter = require('../../Schemas.js/Supporter');
@@ -18,7 +19,7 @@ module.exports = {
         const bugId   = parts[2];
 
         // Only the reporter (premium) may request a reopen
-        const isSupporter = await Supporter.findOne({ userId: interaction.user.id });
+        const isSupporter = await getPremiumEntitlement(interaction.user.id);
         if (!isSupporter) {
             return interaction.editReply({ content: '❌ This reopen option is only available to premium supporters.' });
         }
@@ -40,7 +41,7 @@ module.exports = {
             return interaction.editReply({ content: '❌ The 24-hour reopen window has expired.' });
         }
 
-        if (pendingReopens.has(bugId)) {
+        if (pendingReopens.has(`${guildId}:${bugId}`)) {
             return interaction.editReply({ content: '❌ A reopen request for this bug is already pending staff review.' });
         }
 
@@ -85,7 +86,7 @@ module.exports = {
             );
 
             await thread.send({ embeds: [requestEmbed], components: [confirmRow] });
-            pendingReopens.add(bugId);
+            pendingReopens.add(`${guildId}:${bugId}`);
             await interaction.editReply({ content: '✅ Your reopen request has been submitted. Staff will review it.' });
         } catch (err) {
             client.logger?.error?.(`[BugReopen] Failed to post reopen request: ${err.message}`);

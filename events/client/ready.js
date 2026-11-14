@@ -52,7 +52,7 @@ module.exports = {
     client.logger.info(`${client.user.tag} is online!`);
 
     const updateStatus = () => {
-      client.user.setActivity("v2.1.0 | Tracking Reports", {
+      client.user.setActivity("v2.2.0 | Tracking Reports", {
         type: ActivityType.Custom,
       });
     };
